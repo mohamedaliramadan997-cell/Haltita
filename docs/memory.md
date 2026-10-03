@@ -9,16 +9,18 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 0 setup: T-002 done (Expo Go and web verified); T-001 still open |
-| Next task | **T-001**: identifiers and accounts (owner); then T-003 |
+| Phase | Phase 0 setup: T-002 done (Expo Go and web verified); T-001 in progress (app ID set; store accounts pending) |
+| Stopped at | 2026-10-03: app ID `com.mali.haltita` set and pushed on branch `t/T-001-app-id` (built on the unmerged `t/T-002-mark-done`, also pushed). No PRs open yet |
+| Next step | 1) Open a PR for `t/T-002-mark-done` and merge it, then a PR for `t/T-001-app-id` and merge it. 2) Owner: create the Expo and GitHub accounts; submit Apple Developer and Google Play Console enrolments. 3) Start **T-003** on `t/T-003-docs-content` from `main` |
+| Next task | **T-003** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
-| Blockers | Permanent app ID not chosen (T-001); `com.example.haltita` placeholder in `app.config.ts` |
+| Blockers | Apple Developer and Google Play Console approval pending (T-001) |
 
 ## 2. Environment and setup notes (no secret values here)
 
 | Item | Value |
 |---|---|
-| App ID (iOS bundle and Android package) | `com.<owner>.haltita` *(set at T-001; permanent)* |
+| App ID (iOS bundle and Android package) | `com.mali.haltita` *(set at T-001, 2026-10-03; permanent)* |
 | Store name | حالتيتا – Haltita |
 | Publisher | Owner's **personal** Apple and Google accounts |
 | Expo SDK | *(record at T-005)* |
@@ -81,6 +83,13 @@
 
 ## 6. Session log
 
+### 2026-10-03: T-001 Identifiers and accounts (in progress)
+
+- **Done:** set the permanent app ID `com.mali.haltita` in `app.config.ts` (`ios.bundleIdentifier` and `android.package`), replacing the `com.example.haltita` placeholder; recorded it in §2 (per ADR-016).
+- **Checks:** `tsc --noEmit` passes. There are no `lint`/`test` scripts yet (T-004).
+- **Still open (owner):** Expo and GitHub accounts, Apple Developer enrolment and Google Play Console account. T-001 stays `[~]` until both store accounts are approved.
+- **Next:** T-003.
+
 ### 2026-10-03: T-002 Create the Expo app
 
 - **Done:** scaffolded with `create-expo-app` (default template, **Expo SDK 57**, RN 0.86, TypeScript, Expo Router) on branch `t/T-002-create-expo-app`. Replaced `app.json` with `app.config.ts`: name حالتيتا, slug `haltita`, portrait only, phones only (`supportsTablet: false`), `userInterfaceStyle: dark`. Removed the demo screens, components, hooks and assets, plus their unused dependencies (`@expo/ui`, `expo-device`, `expo-glass-effect`, `expo-image`, `expo-symbols`, `expo-web-browser`).
@@ -117,4 +126,4 @@
 ## 9. Open questions
 
 1. Rebrand the print-and-play PDF to match the app?
-2. The owner's identifier for `com.<owner>.haltita` (decided at T-001).
+2. ~~The owner's identifier for `com.<owner>.haltita`~~ Resolved 2026-10-03: `com.mali.haltita`.
