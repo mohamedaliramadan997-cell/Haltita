@@ -12,7 +12,7 @@
   - Done when: the app ID is recorded in `memory.md` §2; the Expo and GitHub accounts exist; both store enrolments are submitted.
 - [x] **T-002** **Create the Expo app:** `create-expo-app` (TypeScript + Router) in Codespaces; set `name`, `slug`, `ios.bundleIdentifier`, `android.package`; portrait only; remove the demo screens.
   - Done when: it opens in Expo Go (`--tunnel`) and on web.
-- [ ] **T-003** **Docs, content, AI entry point:** `docs/` (6 files + `assets/`), `src/content/content.json`, README, and a `CLAUDE.md`/`AGENTS.md` pointer to the docs.
+- [x] **T-003** **Docs, content, AI entry point:** `docs/` (6 files + `assets/`), `src/content/content.json`, README, and a `CLAUDE.md`/`AGENTS.md` pointer to the docs.
 - [ ] **T-004** **Tooling:** `strict` TypeScript, ESLint (with `no-console`), Prettier, jest-expo; scripts `typecheck`, `lint`, `test`, `test:rules`.
 - [ ] **T-005** **Install the approved JS-only libraries** (`rules.md` §5, excluding the native-only ones). Record the Expo SDK version.
 - [ ] **T-006** **CI:** `.github/workflows/ci.yml` (install, typecheck, lint, test, `npm audit --audit-level=high`), Dependabot, and `main` branch protection that requires CI.

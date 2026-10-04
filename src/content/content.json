@@ -1,0 +1,1490 @@
+{
+  "version": "3.1",
+  "language": {
+    "primary": "ar-EG",
+    "secondary": "en"
+  },
+  "questions": [
+    {
+      "id": "q001",
+      "number": 1,
+      "questionAr": "اتعمل البابل راب (نايلون الفقاقيع) في الأول عشان يبقى إيه؟",
+      "questionEn": "What was bubble wrap originally invented to be?",
+      "answerAr": "ورق حائط بتصميم بارز",
+      "answerEn": "Textured wallpaper",
+      "familySafe": true
+    },
+    {
+      "id": "q002",
+      "number": 2,
+      "questionAr": "الكاتشب كان بيتباع في أمريكا في ثلاثينات القرن الـ١٩ على إنه إيه؟",
+      "questionEn": "In the 1830s, ketchup was sold in the US as what?",
+      "answerAr": "دوا",
+      "answerEn": "Medicine",
+      "familySafe": true
+    },
+    {
+      "id": "q003",
+      "number": 3,
+      "questionAr": "الأخطبوط عنده كام قلب؟",
+      "questionEn": "How many hearts does an octopus have?",
+      "answerAr": "٣ قلوب",
+      "answerEn": "Three",
+      "familySafe": true
+    },
+    {
+      "id": "q004",
+      "number": 4,
+      "questionAr": "اللي اخترع بيتزا الهاواي كان من أنهي جنسية؟",
+      "questionEn": "What nationality was the inventor of Hawaiian pizza?",
+      "answerAr": "يوناني عايش في كندا",
+      "answerEn": "A Greek immigrant living in Canada",
+      "familySafe": true
+    },
+    {
+      "id": "q005",
+      "number": 5,
+      "questionAr": "جلد الدب القطبي لونه إيه تحت الفرو؟",
+      "questionEn": "What colour is a polar bear's skin under its fur?",
+      "answerAr": "أسود",
+      "answerEn": "Black",
+      "familySafe": true
+    },
+    {
+      "id": "q006",
+      "number": 6,
+      "questionAr": "أنهي حيوان ثديي كبير مايقدرش ينط خالص؟",
+      "questionEn": "Which large land mammal can't jump at all?",
+      "answerAr": "الفيل",
+      "answerEn": "The elephant",
+      "familySafe": true
+    },
+    {
+      "id": "q007",
+      "number": 7,
+      "questionAr": "أول منتج اتعمله سكان بالباركود في سوبرماركت كان إيه؟",
+      "questionEn": "What was the first product ever scanned by a barcode at a supermarket?",
+      "answerAr": "علبة لبان «جوسي فروت»",
+      "answerEn": "A pack of Juicy Fruit gum",
+      "familySafe": true
+    },
+    {
+      "id": "q008",
+      "number": 8,
+      "questionAr": "أقصر حرب في التاريخ استمرت قد إيه؟",
+      "questionEn": "How long did the shortest war in history last?",
+      "answerAr": "أقل من ٤٥ دقيقة",
+      "answerEn": "Less than 45 minutes",
+      "familySafe": true
+    },
+    {
+      "id": "q009",
+      "number": 9,
+      "questionAr": "طائر الفلامنجو لونه بمبي ليه؟",
+      "questionEn": "Why are flamingos pink?",
+      "answerAr": "بسبب أكله: الجمبري والطحالب",
+      "answerEn": "Their diet of shrimp and algae",
+      "familySafe": true
+    },
+    {
+      "id": "q010",
+      "number": 10,
+      "questionAr": "جامعة أكسفورد أقدم من عاصمة أنهي حضارة مشهورة؟",
+      "questionEn": "Oxford University is older than the capital of which famous civilization?",
+      "answerAr": "الأزتك (تينوتشتيتلان)",
+      "answerEn": "The Aztecs (Tenochtitlan)",
+      "familySafe": true
+    },
+    {
+      "id": "q011",
+      "number": 11,
+      "questionAr": "إيه هو الحيوان الوطني الرسمي لاسكتلندا؟",
+      "questionEn": "What is Scotland's official national animal?",
+      "answerAr": "اليونيكورن (الحصان وحيد القرن)",
+      "answerEn": "The unicorn",
+      "familySafe": true
+    },
+    {
+      "id": "q012",
+      "number": 12,
+      "questionAr": "العسل اللي لقوه في مقابر الفراعنة كان حالته إيه؟",
+      "questionEn": "What was surprising about honey found in ancient Egyptian tombs?",
+      "answerAr": "لسه صالح للأكل",
+      "answerEn": "It was still edible",
+      "familySafe": true
+    },
+    {
+      "id": "q013",
+      "number": 13,
+      "questionAr": "الموز علمياً بيتصنف على إنه إيه؟",
+      "questionEn": "Botanically, a banana is classified as what?",
+      "answerAr": "توت",
+      "answerEn": "A berry",
+      "familySafe": true
+    },
+    {
+      "id": "q014",
+      "number": 14,
+      "questionAr": "كليوباترا عاشت أقرب زمنياً لأنهي حدث حديث من بناء الهرم الأكبر؟",
+      "questionEn": "Cleopatra lived closer in time to which modern event than to the building of the Great Pyramid?",
+      "answerAr": "هبوط الإنسان على القمر",
+      "answerEn": "The Moon landing",
+      "familySafe": true
+    },
+    {
+      "id": "q015",
+      "number": 15,
+      "questionAr": "فضلات حيوان الومبات شكلها إيه؟",
+      "questionEn": "What shape is wombat poop?",
+      "answerAr": "مكعبات.. زي مكعب السكر!",
+      "answerEn": "Cubes, like sugar cubes!",
+      "familySafe": true
+    },
+    {
+      "id": "q016",
+      "number": 16,
+      "questionAr": "على كوكب الزهرة، اليوم الواحد أطول من إيه؟",
+      "questionEn": "On Venus, a single day is longer than what?",
+      "answerAr": "السنة بتاعته",
+      "answerEn": "Its year",
+      "familySafe": true
+    },
+    {
+      "id": "q017",
+      "number": 17,
+      "questionAr": "أسماك القرش موجودة على الأرض من قبل ظهور إيه؟",
+      "questionEn": "Sharks have existed on Earth since before what?",
+      "answerAr": "الأشجار",
+      "answerEn": "Trees",
+      "familySafe": true
+    },
+    {
+      "id": "q018",
+      "number": 18,
+      "questionAr": "برج إيفل بيحصله إيه في الصيف؟",
+      "questionEn": "What happens to the Eiffel Tower in summer?",
+      "answerAr": "بيطول لحد ١٥ سم من الحرارة",
+      "answerEn": "It grows up to 15 cm taller from the heat",
+      "familySafe": true
+    },
+    {
+      "id": "q019",
+      "number": 19,
+      "questionAr": "الرومان القدام كانوا بيستخدموا إيه بدل ورق التواليت؟",
+      "questionEn": "What did ancient Romans use instead of toilet paper?",
+      "answerAr": "إسفنجة على عصاية",
+      "answerEn": "A sponge on a stick",
+      "familySafe": true
+    },
+    {
+      "id": "q020",
+      "number": 20,
+      "questionAr": "قلب الجمبري موجود فين؟",
+      "questionEn": "Where is a shrimp's heart?",
+      "answerAr": "في راسه",
+      "answerEn": "In its head",
+      "familySafe": true
+    },
+    {
+      "id": "q021",
+      "number": 21,
+      "questionAr": "إيه اسم الخوف من الكلمات الطويلة؟",
+      "questionEn": "What is the fear of long words called?",
+      "answerAr": "هيبوبوتومونستروسيسكويبداليوفوبيا",
+      "answerEn": "Hippopotomonstrosesquippedaliophobia",
+      "familySafe": true
+    },
+    {
+      "id": "q022",
+      "number": 22,
+      "questionAr": "قبل المنبه، العمال في إنجلترا كانوا بيصحوا إزاي؟",
+      "questionEn": "Before alarm clocks, how did British workers wake up?",
+      "answerAr": "واحد بياخد فلوس عشان يخبط على شباكهم بعصاية طويلة",
+      "answerEn": "A paid “knocker-upper” tapped their window with a long stick",
+      "familySafe": true
+    },
+    {
+      "id": "q023",
+      "number": 23,
+      "questionAr": "أنهي حيوان بصماته شبه بصمات الإنسان لدرجة ممكن تلخبط المباحث؟",
+      "questionEn": "Which animal has fingerprints so human-like they could confuse detectives?",
+      "answerAr": "الكوالا",
+      "answerEn": "The koala",
+      "familySafe": true
+    },
+    {
+      "id": "q024",
+      "number": 24,
+      "questionAr": "الحلزونة ممكن تنام قد إيه؟",
+      "questionEn": "How long can a snail sleep?",
+      "answerAr": "لحد ٣ سنين",
+      "answerEn": "Up to three years",
+      "familySafe": true
+    },
+    {
+      "id": "q025",
+      "number": 25,
+      "questionAr": "صلصال «بلاي دو» اتعمل في الأول عشان يبقى إيه؟",
+      "questionEn": "What was Play-Doh originally made to be?",
+      "answerAr": "منظف لورق الحيطان",
+      "answerEn": "Wallpaper cleaner",
+      "familySafe": true
+    },
+    {
+      "id": "q026",
+      "number": 26,
+      "questionAr": "أنهي دولة فيها أهرامات أكتر من مصر؟",
+      "questionEn": "Which country has more pyramids than Egypt?",
+      "answerAr": "السودان",
+      "answerEn": "Sudan",
+      "familySafe": true
+    },
+    {
+      "id": "q027",
+      "number": 27,
+      "questionAr": "نابليون اتهاجم مرة من جيش إيه؟",
+      "questionEn": "Napoleon was once attacked by an army of what?",
+      "answerAr": "أرانب",
+      "answerEn": "Rabbits",
+      "familySafe": true
+    },
+    {
+      "id": "q028",
+      "number": 28,
+      "questionAr": "إيه اللي بيخلي البقرة تدي لبن أكتر؟",
+      "questionEn": "What makes cows produce more milk?",
+      "answerAr": "إنها تسمع موسيقى هادية",
+      "answerEn": "Listening to calm, slow music",
+      "familySafe": true
+    },
+    {
+      "id": "q029",
+      "number": 29,
+      "questionAr": "ثعالب الماء بتعمل إيه وهي نايمة؟",
+      "questionEn": "What do sea otters do while they sleep?",
+      "answerAr": "بتمسك إيدين بعض عشان التيار مايفرقهمش",
+      "answerEn": "Hold hands so they don't drift apart",
+      "familySafe": true
+    },
+    {
+      "id": "q030",
+      "number": 30,
+      "questionAr": "الجزر كان لونه إيه في الأصل؟",
+      "questionEn": "What colour were carrots originally?",
+      "answerAr": "بنفسجي",
+      "answerEn": "Purple",
+      "familySafe": true
+    },
+    {
+      "id": "q031",
+      "number": 31,
+      "questionAr": "الجيش الأسترالي دخل حرب سنة ١٩٣٢ ضد مين؟ ومين كسب؟",
+      "questionEn": "In 1932 the Australian army went to war against whom, and who won?",
+      "answerAr": "طيور الإيمو.. والإيمو كسبوا!",
+      "answerEn": "Emus, and the emus won",
+      "familySafe": true
+    },
+    {
+      "id": "q032",
+      "number": 32,
+      "questionAr": "في سويسرا ممنوع قانوناً تربي واحد بس من أنهي حيوان أليف؟",
+      "questionEn": "In Switzerland, it's illegal to own just one of which pet?",
+      "answerAr": "خنزير غينيا، عشان بيحس بالوحدة",
+      "answerEn": "A guinea pig, they get lonely",
+      "familySafe": true
+    },
+    {
+      "id": "q033",
+      "number": 33,
+      "questionAr": "مخترع علبة «برينجلز» طلب يندفن في إيه؟",
+      "questionEn": "What did the inventor of the Pringles can ask to be buried in?",
+      "answerAr": "علبة برينجلز",
+      "answerEn": "A Pringles can",
+      "familySafe": true
+    },
+    {
+      "id": "q034",
+      "number": 34,
+      "questionAr": "عرق فرس النهر لونه إيه؟",
+      "questionEn": "What colour is hippo sweat?",
+      "answerAr": "أحمر",
+      "answerEn": "Red",
+      "familySafe": true
+    },
+    {
+      "id": "q035",
+      "number": 35,
+      "questionAr": "الفراعنة كانوا بيعملوا اختبار الحمل إزاي؟",
+      "questionEn": "How did ancient Egyptians test for pregnancy?",
+      "answerAr": "الست تعمل حمام على بذور قمح وشعير",
+      "answerEn": "Peeing on wheat and barley seeds",
+      "familySafe": false
+    },
+    {
+      "id": "q036",
+      "number": 36,
+      "questionAr": "أطباء الفراعنة كانوا بيستخدموا إيه لمنع الحمل؟",
+      "questionEn": "What did ancient Egyptian doctors use as contraception?",
+      "answerAr": "روث التماسيح",
+      "answerEn": "Crocodile dung",
+      "familySafe": false
+    },
+    {
+      "id": "q037",
+      "number": 37,
+      "questionAr": "أنهي كوكب لو حطيته في بانيو مية كبير كفاية هيعوم؟",
+      "questionEn": "Which planet would float in a big enough bathtub?",
+      "answerAr": "زحل",
+      "answerEn": "Saturn",
+      "familySafe": true
+    },
+    {
+      "id": "q038",
+      "number": 38,
+      "questionAr": "أول فيديو اتنزل على يوتيوب كان عن إيه؟",
+      "questionEn": "What was the very first YouTube video about?",
+      "answerAr": "واحد في جنينة الحيوانات بيتكلم عن الفيلة",
+      "answerEn": "A guy at the zoo talking about elephants",
+      "familySafe": true
+    },
+    {
+      "id": "q039",
+      "number": 39,
+      "questionAr": "أول حاجة اتباعت على موقع eBay كانت إيه؟",
+      "questionEn": "What was the first item ever sold on eBay?",
+      "answerAr": "مؤشر ليزر بايظ",
+      "answerEn": "A broken laser pointer",
+      "familySafe": true
+    },
+    {
+      "id": "q040",
+      "number": 40,
+      "questionAr": "رواد الفضاء بيحصل إيه لطولهم في الفضاء؟",
+      "questionEn": "What happens to astronauts' height in space?",
+      "answerAr": "بيطولوا لحد ٥ سم",
+      "answerEn": "They grow up to 5 cm taller",
+      "familySafe": true
+    },
+    {
+      "id": "q041",
+      "number": 41,
+      "questionAr": "الموناليزا ناقصها إيه في وشها؟",
+      "questionEn": "What's missing from the Mona Lisa's face?",
+      "answerAr": "الحواجب",
+      "answerEn": "Eyebrows",
+      "familySafe": true
+    },
+    {
+      "id": "q042",
+      "number": 42,
+      "questionAr": "الموناليزا بقت مشهورة جداً سنة ١٩١١ بسبب إيه؟",
+      "questionEn": "Why did the Mona Lisa become world-famous in 1911?",
+      "answerAr": "اتسرقت",
+      "answerEn": "It was stolen",
+      "familySafe": true
+    },
+    {
+      "id": "q043",
+      "number": 43,
+      "questionAr": "أنهي حيوان بينام بنص مخه وعين واحدة مفتوحة؟",
+      "questionEn": "Which animal sleeps with half its brain awake and one eye open?",
+      "answerAr": "الدولفين",
+      "answerEn": "The dolphin",
+      "familySafe": true
+    },
+    {
+      "id": "q044",
+      "number": 44,
+      "questionAr": "إيه أكتر أكل بيتسرق في العالم؟",
+      "questionEn": "What's the most stolen food in the world?",
+      "answerAr": "الجبنة",
+      "answerEn": "Cheese",
+      "familySafe": true
+    },
+    {
+      "id": "q045",
+      "number": 45,
+      "questionAr": "الأزتك كانوا بيستخدموا إيه كفلوس؟",
+      "questionEn": "What did the Aztecs use as money?",
+      "answerAr": "حبوب الكاكاو",
+      "answerEn": "Cocoa beans",
+      "familySafe": true
+    },
+    {
+      "id": "q046",
+      "number": 46,
+      "questionAr": "اليابان بتبيع أنهي فاكهة على شكل مكعب؟",
+      "questionEn": "Which fruit is sold in a cube shape in Japan?",
+      "answerAr": "البطيخ",
+      "answerEn": "Watermelon",
+      "familySafe": true
+    },
+    {
+      "id": "q047",
+      "number": 47,
+      "questionAr": "المنشار الكهربائي اتخترع في الأول عشان إيه؟",
+      "questionEn": "What was the chainsaw originally invented for?",
+      "answerAr": "للمساعدة في الولادة",
+      "answerEn": "To help with childbirth",
+      "familySafe": true
+    },
+    {
+      "id": "q048",
+      "number": 48,
+      "questionAr": "أول ماكينة بيع أوتوماتيك في التاريخ (في إسكندرية القديمة) كانت بتبيع إيه؟",
+      "questionEn": "What did the first vending machine (in ancient Alexandria) sell?",
+      "answerAr": "مية مقدسة",
+      "answerEn": "Holy water",
+      "familySafe": true
+    },
+    {
+      "id": "q049",
+      "number": 49,
+      "questionAr": "كلمة «كوداك» معناها إيه؟",
+      "questionEn": "What does the brand name “Kodak” mean?",
+      "answerAr": "ولا حاجة، كلمة متألفة",
+      "answerEn": "Nothing, it's made up",
+      "familySafe": true
+    },
+    {
+      "id": "q050",
+      "number": 50,
+      "questionAr": "اسم «ليجو» جاي منين؟",
+      "questionEn": "Where does the name LEGO come from?",
+      "answerAr": "من الدنماركي: «العب كويس»",
+      "answerEn": "Danish for “play well”",
+      "familySafe": true
+    },
+    {
+      "id": "q051",
+      "number": 51,
+      "questionAr": "اسم آيس كريم «هاجن داز» معناه إيه بالدنماركي؟",
+      "questionEn": "What does “Häagen-Dazs” mean in Danish?",
+      "answerAr": "ولا حاجة، اسم متألف في نيويورك",
+      "answerEn": "Nothing, it was invented in New York",
+      "familySafe": true
+    },
+    {
+      "id": "q052",
+      "number": 52,
+      "questionAr": "رماد مصمم الفريسبي الحديث اتعمل بيه إيه بعد موته؟",
+      "questionEn": "What was done with the ashes of the modern Frisbee's designer?",
+      "answerAr": "اتعمل منه فريسبي",
+      "answerEn": "They were moulded into frisbees",
+      "familySafe": true
+    },
+    {
+      "id": "q053",
+      "number": 53,
+      "questionAr": "أطول مدة طيران مسجلة لفرخة قد إيه؟",
+      "questionEn": "What's the longest recorded flight by a chicken?",
+      "answerAr": "١٣ ثانية",
+      "answerEn": "13 seconds",
+      "familySafe": true
+    },
+    {
+      "id": "q054",
+      "number": 54,
+      "questionAr": "أنهي حيوان مايقدرش يطلع لسانه؟",
+      "questionEn": "Which animal can't stick out its tongue?",
+      "answerAr": "التمساح",
+      "answerEn": "The crocodile",
+      "familySafe": true
+    },
+    {
+      "id": "q055",
+      "number": 55,
+      "questionAr": "لسان الزرافة لونه إيه؟",
+      "questionEn": "What colour is a giraffe's tongue?",
+      "answerAr": "بنفسجي غامق",
+      "answerEn": "Dark purple",
+      "familySafe": true
+    },
+    {
+      "id": "q056",
+      "number": 56,
+      "questionAr": "أنهي طير يقدر يطير لورا؟",
+      "questionEn": "Which bird can fly backwards?",
+      "answerAr": "الطائر الطنان",
+      "answerEn": "The hummingbird",
+      "familySafe": true
+    },
+    {
+      "id": "q057",
+      "number": 57,
+      "questionAr": "الفراشة بتدوق الأكل بإيه؟",
+      "questionEn": "What do butterflies taste with?",
+      "answerAr": "برجليها",
+      "answerEn": "Their feet",
+      "familySafe": true
+    },
+    {
+      "id": "q058",
+      "number": 58,
+      "questionAr": "ريحة الأرض بعد المطر ليها اسم علمي.. إيه هو؟",
+      "questionEn": "The smell of earth after rain has a scientific name. What is it?",
+      "answerAr": "بتريكور",
+      "answerEn": "Petrichor",
+      "familySafe": true
+    },
+    {
+      "id": "q059",
+      "number": 59,
+      "questionAr": "من ساعة ما اكتشفوا بلوتو سنة ١٩٣٠، لف حوالين الشمس كام مرة؟",
+      "questionEn": "Since Pluto was discovered in 1930, how many times has it orbited the Sun?",
+      "answerAr": "ولا مرة",
+      "answerEn": "Zero",
+      "familySafe": true
+    },
+    {
+      "id": "q060",
+      "number": 60,
+      "questionAr": "أول كائنات حية اتبعتت الفضاء كانت إيه؟",
+      "questionEn": "What were the first animals sent to space?",
+      "answerAr": "ذباب الفاكهة",
+      "answerEn": "Fruit flies",
+      "familySafe": true
+    },
+    {
+      "id": "q061",
+      "number": 61,
+      "questionAr": "الرومان كانوا بيستخدموا إيه كغسول للبق؟",
+      "questionEn": "What did ancient Romans use as mouthwash?",
+      "answerAr": "بول",
+      "answerEn": "Urine",
+      "familySafe": true
+    },
+    {
+      "id": "q062",
+      "number": 62,
+      "questionAr": "الـ«فوميتوريوم» عند الرومان كان إيه؟",
+      "questionEn": "What was a Roman “vomitorium”?",
+      "answerAr": "ممر خروج في المدرج، مش مكان للترجيع",
+      "answerEn": "A stadium exit, not a vomiting room",
+      "familySafe": true
+    },
+    {
+      "id": "q063",
+      "number": 63,
+      "questionAr": "حدقة عين الماعز شكلها إيه؟",
+      "questionEn": "What shape are a goat's pupils?",
+      "answerAr": "مستطيلة",
+      "answerEn": "Rectangular",
+      "familySafe": true
+    },
+    {
+      "id": "q064",
+      "number": 64,
+      "questionAr": "رواد الفضاء بياكلوا إيه بدل العيش؟",
+      "questionEn": "What do astronauts eat instead of bread?",
+      "answerAr": "تورتيلا، عشان الفتافيت بتطير",
+      "answerEn": "Tortillas, because crumbs float away",
+      "familySafe": true
+    },
+    {
+      "id": "q065",
+      "number": 65,
+      "questionAr": "كعك الحظ «فورتشن كوكيز» أصله منين؟",
+      "questionEn": "Where do fortune cookies really come from?",
+      "answerAr": "أمريكا بأصل ياباني.. مش الصين",
+      "answerEn": "The US, with Japanese roots, not China",
+      "familySafe": true
+    },
+    {
+      "id": "q066",
+      "number": 66,
+      "questionAr": "النشيد الوطني الإسباني فيه إيه غريب؟",
+      "questionEn": "What's strange about Spain's national anthem?",
+      "answerAr": "مالوش كلمات",
+      "answerEn": "It has no words",
+      "familySafe": true
+    },
+    {
+      "id": "q067",
+      "number": 67,
+      "questionAr": "الفراعنة كانوا بيعملوا إيه حزناً على موت القطة؟",
+      "questionEn": "What did ancient Egyptians do to mourn a pet cat?",
+      "answerAr": "بيحلقوا حواجبهم",
+      "answerEn": "Shaved off their eyebrows",
+      "familySafe": true
+    },
+    {
+      "id": "q068",
+      "number": 68,
+      "questionAr": "مومياء رمسيس التاني طلعلها إيه سنة ١٩٧٤ عشان تسافر فرنسا؟",
+      "questionEn": "What was Ramses II's mummy issued in 1974 to travel to France?",
+      "answerAr": "باسبور مصري",
+      "answerEn": "An Egyptian passport",
+      "familySafe": true
+    },
+    {
+      "id": "q069",
+      "number": 69,
+      "questionAr": "خنجر توت عنخ آمون معمول من إيه؟",
+      "questionEn": "What is Tutankhamun's dagger made from?",
+      "answerAr": "حديد من نيزك",
+      "answerEn": "Iron from a meteorite",
+      "familySafe": true
+    },
+    {
+      "id": "q070",
+      "number": 70,
+      "questionAr": "الصرصار يقدر يعيش قد إيه من غير راسه؟",
+      "questionEn": "How long can a cockroach live without its head?",
+      "answerAr": "حوالي أسبوع",
+      "answerEn": "About a week",
+      "familySafe": true
+    },
+    {
+      "id": "q071",
+      "number": 71,
+      "questionAr": "إيه أقرب قريب عايش لديناصور التي-ريكس؟",
+      "questionEn": "What's one of the closest living relatives of the T-rex?",
+      "answerAr": "الفرخة",
+      "answerEn": "The chicken",
+      "familySafe": true
+    },
+    {
+      "id": "q072",
+      "number": 72,
+      "questionAr": "ملك السويد أدولف فريدريك مات إزاي سنة ١٧٧١؟",
+      "questionEn": "How did King Adolf Frederick of Sweden die in 1771?",
+      "answerAr": "من كتر أكل الحلويات",
+      "answerEn": "From eating too much dessert",
+      "familySafe": true
+    },
+    {
+      "id": "q073",
+      "number": 73,
+      "questionAr": "أول فرش أسنان كانت شعرتها معمولة من إيه؟",
+      "questionEn": "What were early toothbrush bristles made from?",
+      "answerAr": "شعر خنزير",
+      "answerEn": "Pig hair",
+      "familySafe": true
+    },
+    {
+      "id": "q074",
+      "number": 74,
+      "questionAr": "كلمة «OK» أصلها إيه؟",
+      "questionEn": "Where does “OK” come from?",
+      "answerAr": "هزار: كتابة غلط لـ all correct",
+      "answerEn": "A joke misspelling of “all correct”",
+      "familySafe": true
+    },
+    {
+      "id": "q075",
+      "number": 75,
+      "questionAr": "اسم «جوجل» جاي منين؟",
+      "questionEn": "Where does the name Google come from?",
+      "answerAr": "غلطة إملائية في رقم googol",
+      "answerEn": "A misspelling of “googol”",
+      "familySafe": true
+    },
+    {
+      "id": "q076",
+      "number": 76,
+      "questionAr": "نينتندو بدأت بتبيع إيه؟",
+      "questionEn": "What did Nintendo originally sell?",
+      "answerAr": "كوتشينة",
+      "answerEn": "Playing cards",
+      "familySafe": true
+    },
+    {
+      "id": "q077",
+      "number": 77,
+      "questionAr": "سامسونج بدأت بتبيع إيه؟",
+      "questionEn": "What did Samsung originally sell?",
+      "answerAr": "سمك ناشف وخضار",
+      "answerEn": "Dried fish and groceries",
+      "familySafe": true
+    },
+    {
+      "id": "q078",
+      "number": 78,
+      "questionAr": "نوكيا بدأت بتصنع إيه؟",
+      "questionEn": "What did Nokia originally make?",
+      "answerAr": "ورق",
+      "answerEn": "Paper",
+      "familySafe": true
+    },
+    {
+      "id": "q079",
+      "number": 79,
+      "questionAr": "عدد الطرق اللي ممكن تفنط بيها كوتشينة ٥٢ ورقة أكبر من إيه؟",
+      "questionEn": "The number of ways to shuffle a 52-card deck is bigger than what?",
+      "answerAr": "عدد الذرات اللي على الكرة الأرضية",
+      "answerEn": "The number of atoms on Earth",
+      "familySafe": true
+    },
+    {
+      "id": "q080",
+      "number": 80,
+      "questionAr": "الميكرويف اتكتشف إزاي؟",
+      "questionEn": "How was the microwave oven discovered?",
+      "answerAr": "لوح شوكولاتة ساح في جيب مهندس",
+      "answerEn": "A chocolate bar melted in an engineer's pocket",
+      "familySafe": true
+    },
+    {
+      "id": "q081",
+      "number": 81,
+      "questionAr": "ورق «بوست إت» اللزق اتخترع إزاي؟",
+      "questionEn": "How were Post-it notes invented?",
+      "answerAr": "من غرا فاشل مابيلزقش كويس",
+      "answerEn": "From a failed, weak glue",
+      "familySafe": true
+    },
+    {
+      "id": "q082",
+      "number": 82,
+      "questionAr": "ليه عمود الحلاق فيه خطوط حمرا؟",
+      "questionEn": "Why do barber poles have red stripes?",
+      "answerAr": "زمان الحلاقين كانوا بيعملوا عمليات وحجامة",
+      "answerEn": "Barbers used to do surgery and bloodletting",
+      "familySafe": true
+    },
+    {
+      "id": "q083",
+      "number": 83,
+      "questionAr": "من عجائب الدنيا السبع القديمة، كام واحدة لسه موجودة؟",
+      "questionEn": "Of the 7 ancient wonders, how many still stand?",
+      "answerAr": "واحدة بس: الهرم الأكبر",
+      "answerEn": "Just one, the Great Pyramid",
+      "familySafe": true
+    },
+    {
+      "id": "q084",
+      "number": 84,
+      "questionAr": "الهرم الأكبر كان شكله إيه من برا زمان؟",
+      "questionEn": "What did the Great Pyramid originally look like outside?",
+      "answerAr": "أبيض ولامع من حجر جيري مصقول",
+      "answerEn": "Shiny white polished limestone",
+      "familySafe": true
+    },
+    {
+      "id": "q085",
+      "number": 85,
+      "questionAr": "نجم البحر بياكل إزاي؟",
+      "questionEn": "How does a starfish eat?",
+      "answerAr": "بيطلع معدته من بقه برا جسمه",
+      "answerEn": "Pushes its stomach out through its mouth",
+      "familySafe": true
+    },
+    {
+      "id": "q086",
+      "number": 86,
+      "questionAr": "الكسلان بينزل من على الشجرة مرة في الأسبوع.. ليه؟",
+      "questionEn": "Why does a sloth climb down its tree once a week?",
+      "answerAr": "عشان يعمل حمام",
+      "answerEn": "To poop",
+      "familySafe": true
+    },
+    {
+      "id": "q087",
+      "number": 87,
+      "questionAr": "أنهي حيوان مايقدرش يرجّع خالص؟",
+      "questionEn": "Which animal can't vomit at all?",
+      "answerAr": "الحصان",
+      "answerEn": "The horse",
+      "familySafe": true
+    },
+    {
+      "id": "q088",
+      "number": 88,
+      "questionAr": "مخ ديناصور الستيجوسورس كان حجمه قد إيه؟",
+      "questionEn": "How big was a Stegosaurus's brain?",
+      "answerAr": "قد حباية عين الجمل",
+      "answerEn": "About the size of a walnut",
+      "familySafe": true
+    },
+    {
+      "id": "q089",
+      "number": 89,
+      "questionAr": "بيتهوفن كان بيعمل إيه قبل ما يعمل القهوة؟",
+      "questionEn": "What did Beethoven do before making his coffee?",
+      "answerAr": "يعد ٦٠ حباية بن بالظبط",
+      "answerEn": "Counted exactly 60 coffee beans",
+      "familySafe": true
+    },
+    {
+      "id": "q090",
+      "number": 90,
+      "questionAr": "الإنسان بيشترك في حوالي ٦٠٪ من جيناته مع أنهي فاكهة؟",
+      "questionEn": "Humans share about 60% of their genes with which fruit?",
+      "answerAr": "الموز",
+      "answerEn": "The banana",
+      "familySafe": true
+    },
+    {
+      "id": "q091",
+      "number": 91,
+      "questionAr": "بيضة طائر الكيوي حجمها قد إيه مقارنة بجسمها؟",
+      "questionEn": "How big is a kiwi bird's egg compared to its body?",
+      "answerAr": "حوالي خُمس وزنها",
+      "answerEn": "About a fifth of its body weight",
+      "familySafe": true
+    },
+    {
+      "id": "q092",
+      "number": 92,
+      "questionAr": "أول رسالة SMS في التاريخ كان مكتوب فيها إيه؟",
+      "questionEn": "What did the first ever text message say?",
+      "answerAr": "Merry Christmas",
+      "answerEn": "“Merry Christmas”",
+      "familySafe": true
+    },
+    {
+      "id": "q093",
+      "number": 93,
+      "questionAr": "جزر الكناري اتسمت على اسم إيه؟",
+      "questionEn": "What are the Canary Islands named after?",
+      "answerAr": "الكلاب",
+      "answerEn": "Dogs",
+      "familySafe": true
+    },
+    {
+      "id": "q094",
+      "number": 94,
+      "questionAr": "مساحة روسيا أكبر من مساحة أنهي كوكب؟",
+      "questionEn": "Russia's surface area is bigger than which planet's?",
+      "answerAr": "بلوتو",
+      "answerEn": "Pluto",
+      "familySafe": true
+    },
+    {
+      "id": "q095",
+      "number": 95,
+      "questionAr": "أنهي دولة علمها مش مستطيل؟",
+      "questionEn": "Which country's flag isn't a rectangle?",
+      "answerAr": "نيبال",
+      "answerEn": "Nepal",
+      "familySafe": true
+    },
+    {
+      "id": "q096",
+      "number": 96,
+      "questionAr": "في فرس البحر، مين اللي بيولد؟",
+      "questionEn": "Among seahorses, who gives birth?",
+      "answerAr": "الذكر",
+      "answerEn": "The male",
+      "familySafe": true
+    },
+    {
+      "id": "q097",
+      "number": 97,
+      "questionAr": "قلب الحوت الأزرق حجمه قد إيه؟",
+      "questionEn": "How big is a blue whale's heart?",
+      "answerAr": "قد عربية صغيرة",
+      "answerEn": "About the size of a small car",
+      "familySafe": true
+    },
+    {
+      "id": "q098",
+      "number": 98,
+      "questionAr": "أنهي دولة فيها أكبر عدد جمال برية في العالم؟",
+      "questionEn": "Which country has the world's largest wild camel population?",
+      "answerAr": "أستراليا",
+      "answerEn": "Australia",
+      "familySafe": true
+    },
+    {
+      "id": "q099",
+      "number": 99,
+      "questionAr": "ليه الإمارات بتستورد رمل رغم كل الصحرا دي؟",
+      "questionEn": "Why does the UAE import sand despite all its desert?",
+      "answerAr": "رمل الصحرا ناعم أوي ومينفعش للخرسانة",
+      "answerEn": "Desert sand is too smooth for concrete",
+      "familySafe": true
+    },
+    {
+      "id": "q100",
+      "number": 100,
+      "questionAr": "إزاي تشوف الغروب مرتين في نفس اليوم في دبي؟",
+      "questionEn": "How can you watch the sunset twice in one day in Dubai?",
+      "answerAr": "تشوفه تحت وتطلع بالأسانسير لفوق برج خليفة",
+      "answerEn": "Watch it below, then ride up Burj Khalifa",
+      "familySafe": true
+    }
+  ],
+  "challenges": [
+    {
+      "id": "c01",
+      "textAr": "كرر آخر كلمة في كل جملة ٣ مرات",
+      "textEn": "Repeat the last word of every sentence three times"
+    },
+    {
+      "id": "c02",
+      "textAr": "ابدأ إجابتك بـ «ماما كانت دايماً تقولي...»",
+      "textEn": "Start with “My mother always used to tell me…”"
+    },
+    {
+      "id": "c03",
+      "textAr": "جاوب وانت بتهرش",
+      "textEn": "Answer while scratching yourself"
+    },
+    {
+      "id": "c04",
+      "textAr": "جاوب من غير ما تقول حرف الراء",
+      "textEn": "Answer without saying the letter ر"
+    },
+    {
+      "id": "c05",
+      "textAr": "جاوب وانت بتوشوش",
+      "textEn": "Answer in a whisper"
+    },
+    {
+      "id": "c06",
+      "textAr": "جاوب كأنك معلق ماتش كورة",
+      "textEn": "Answer like a football commentator"
+    },
+    {
+      "id": "c07",
+      "textAr": "جاوب بالفصحى",
+      "textEn": "Answer in classical Arabic (فصحى)"
+    },
+    {
+      "id": "c08",
+      "textAr": "جاوب من غير ما ترمش",
+      "textEn": "Answer without blinking"
+    },
+    {
+      "id": "c09",
+      "textAr": "اختم إجابتك بسؤال",
+      "textEn": "End your answer with a question"
+    },
+    {
+      "id": "c10",
+      "textAr": "جاوب وانت ماسك مناخيرك",
+      "textEn": "Answer while pinching your nose"
+    },
+    {
+      "id": "c11",
+      "textAr": "جاوب كأنك مذيع نشرة الأخبار",
+      "textEn": "Answer like a news anchor"
+    },
+    {
+      "id": "c12",
+      "textAr": "غني إجابتك على لحن أي أغنية",
+      "textEn": "Sing your answer to any tune"
+    },
+    {
+      "id": "c13",
+      "textAr": "جاوب بلهجة غير لهجتك",
+      "textEn": "Answer in a dialect that isn't yours"
+    },
+    {
+      "id": "c14",
+      "textAr": "بص في عين المخمن وجاوب من غير ما تضحك",
+      "textEn": "Stare into the guesser's eyes and don't laugh"
+    },
+    {
+      "id": "c15",
+      "textAr": "جاوب وانت بتعيط بحرقة",
+      "textEn": "Answer while sobbing dramatically"
+    },
+    {
+      "id": "c16",
+      "textAr": "جاوب كأنك بتنادي حد في آخر الشارع",
+      "textEn": "Answer as if shouting down the street"
+    },
+    {
+      "id": "c17",
+      "textAr": "قول «يا جماعة» بعد كل كلمتين",
+      "textEn": "Say “guys” after every two words"
+    },
+    {
+      "id": "c18",
+      "textAr": "جاوب بصوت رفيع زي الكرتون",
+      "textEn": "Answer in a squeaky cartoon voice"
+    },
+    {
+      "id": "c19",
+      "textAr": "ممنوع تحرك إيديك خالص",
+      "textEn": "You can't move your hands at all"
+    },
+    {
+      "id": "c20",
+      "textAr": "جاوب كأنك جدتك",
+      "textEn": "Answer as your grandmother"
+    },
+    {
+      "id": "c21",
+      "textAr": "قول إجابتك على شكل إعلان تلفزيون",
+      "textEn": "Give your answer as a TV commercial"
+    },
+    {
+      "id": "c22",
+      "textAr": "اشرح كأنك بتكلم طفل عنده ٥ سنين",
+      "textEn": "Explain it to a 5-year-old"
+    },
+    {
+      "id": "c23",
+      "textAr": "جاوب وانت بترقص حواجبك",
+      "textEn": "Answer while dancing your eyebrows"
+    },
+    {
+      "id": "c24",
+      "textAr": "اختم إجابتك بضحكة شريرة",
+      "textEn": "End your answer with an evil laugh"
+    },
+    {
+      "id": "c25",
+      "textAr": "جاوب كأنك روبوت",
+      "textEn": "Answer like a robot"
+    },
+    {
+      "id": "c26",
+      "textAr": "جاوب كأنك كابتن طيارة بيكلم الركاب",
+      "textEn": "Answer like a pilot addressing passengers"
+    },
+    {
+      "id": "c27",
+      "textAr": "جاوب كأنك شيف في برنامج طبخ",
+      "textEn": "Answer like a TV cooking-show chef"
+    },
+    {
+      "id": "c28",
+      "textAr": "جاوب كأنك محامي بيترافع في المحكمة",
+      "textEn": "Answer like a lawyer pleading in court"
+    },
+    {
+      "id": "c29",
+      "textAr": "جاوب كأنك بتعترف بسر خطير",
+      "textEn": "Answer as if confessing a dark secret"
+    },
+    {
+      "id": "c30",
+      "textAr": "جاوب وانت زعلان جداً من المخمن",
+      "textEn": "Answer as if furious at the guesser"
+    },
+    {
+      "id": "c31",
+      "textAr": "جاوب كأنك بتحكي حدوتة قبل النوم",
+      "textEn": "Answer as a bedtime story"
+    },
+    {
+      "id": "c32",
+      "textAr": "جاوب كأنك نجم سينما في مقابلة",
+      "textEn": "Answer like a movie star in an interview"
+    },
+    {
+      "id": "c33",
+      "textAr": "جاوب كأنك مدرس بيزعق في الفصل",
+      "textEn": "Answer like a teacher yelling at the class"
+    },
+    {
+      "id": "c34",
+      "textAr": "جاوب بالسلو موشن",
+      "textEn": "Answer in slow motion"
+    },
+    {
+      "id": "c35",
+      "textAr": "اختم كل جملة بـ «يا حبيبي»",
+      "textEn": "End every sentence with “ya habibi”"
+    },
+    {
+      "id": "c36",
+      "textAr": "ابدأ كل جملة بـ «في يوم من الأيام»",
+      "textEn": "Start every sentence with “Once upon a time”"
+    },
+    {
+      "id": "c37",
+      "textAr": "جاوب من غير ما شفايفك تلمس بعض",
+      "textEn": "Answer without your lips touching"
+    },
+    {
+      "id": "c38",
+      "textAr": "جاوب وانت مبتسم ابتسامة عريضة طول الوقت",
+      "textEn": "Keep a huge grin the whole time"
+    },
+    {
+      "id": "c39",
+      "textAr": "جاوب كأنك في مكالمة والشبكة وحشة",
+      "textEn": "Answer like a phone call with bad signal"
+    },
+    {
+      "id": "c40",
+      "textAr": "جاوب كأنك بياع في السوق بينادي على بضاعته",
+      "textEn": "Answer like a market seller calling out"
+    },
+    {
+      "id": "c41",
+      "textAr": "جاوب كأنك مدرب جيم بيحمّس الناس",
+      "textEn": "Answer like a gym coach hyping people up"
+    },
+    {
+      "id": "c42",
+      "textAr": "قول «مياو» في نص إجابتك مرتين",
+      "textEn": "Say “meow” twice in the middle of your answer"
+    },
+    {
+      "id": "c43",
+      "textAr": "اتكلم عن نفسك باسمك بدل «أنا»",
+      "textEn": "Refer to yourself by name, never “I”"
+    },
+    {
+      "id": "c44",
+      "textAr": "جاوب كأنك محقق بيحل جريمة",
+      "textEn": "Answer like a detective solving a crime"
+    },
+    {
+      "id": "c45",
+      "textAr": "جاوب كأنك بتبيع الإجابة في مزاد",
+      "textEn": "Answer like an auctioneer selling it"
+    },
+    {
+      "id": "c46",
+      "textAr": "جاوب كأنك عريس بيقول كلمة في فرحه",
+      "textEn": "Answer like a groom giving a wedding speech"
+    },
+    {
+      "id": "c47",
+      "textAr": "جاوب كأنك سواق تاكسي بيدردش مع الزبون",
+      "textEn": "Answer like a chatty taxi driver"
+    },
+    {
+      "id": "c48",
+      "textAr": "ممنوع تبص للمخمن خالص",
+      "textEn": "You can't look at the guesser at all"
+    },
+    {
+      "id": "c49",
+      "textAr": "جاوب وعينيك مقفولة",
+      "textEn": "Answer with your eyes closed"
+    },
+    {
+      "id": "c50",
+      "textAr": "جاوب بصوت تخين أوي زي الشرير",
+      "textEn": "Answer in a deep villain voice"
+    }
+  ],
+  "missions": [
+    {
+      "id": "m01",
+      "textAr": "كن أول واحد يجاوب في ٣ جولات مختلفة",
+      "textEn": "Be the first to answer in 3 different rounds"
+    },
+    {
+      "id": "m02",
+      "textAr": "خلي حد يقول اسمك ٣ مرات",
+      "textEn": "Get someone to say your name 3 times"
+    },
+    {
+      "id": "m03",
+      "textAr": "اخدع المخمن مرتين",
+      "textEn": "Fool the guesser twice"
+    },
+    {
+      "id": "m04",
+      "textAr": "قول كلمة «بطاطس» في ٣ إجابات مختلفة",
+      "textEn": "Say “potato” in 3 different answers"
+    },
+    {
+      "id": "m05",
+      "textAr": "ضحّك حد وهو بيجاوب",
+      "textEn": "Make someone laugh during their own answer"
+    },
+    {
+      "id": "m06",
+      "textAr": "اتختار على إنك الصادق وانت كداب",
+      "textEn": "Get picked as the truth-teller while lying"
+    },
+    {
+      "id": "m07",
+      "textAr": "خلي لاعب تاني يكسر كارت الأحكام",
+      "textEn": "Make another player break the challenge card"
+    },
+    {
+      "id": "m08",
+      "textAr": "امدح المخمن في إجابتك ٣ جولات",
+      "textEn": "Compliment the guesser in your answer for 3 rounds"
+    },
+    {
+      "id": "m09",
+      "textAr": "خلي المخمن يختارك ٣ مرات",
+      "textEn": "Get picked by the guesser 3 times"
+    },
+    {
+      "id": "m10",
+      "textAr": "عدي ٣ جولات كاملة من غير ما تبتسم",
+      "textEn": "Get through 3 full rounds without smiling"
+    },
+    {
+      "id": "m11",
+      "textAr": "قول «زي ما جدي الله يرحمه كان بيقول» في إجابتين",
+      "textEn": "Say “as my late grandpa used to say” in 2 answers"
+    },
+    {
+      "id": "m12",
+      "textAr": "خلي حد يسألك «بجد؟!» مرتين",
+      "textEn": "Get someone to ask you “Seriously?!” twice"
+    },
+    {
+      "id": "m13",
+      "textAr": "اذكر اسم لاعب تاني في ٣ إجابات",
+      "textEn": "Mention another player's name in 3 answers"
+    },
+    {
+      "id": "m14",
+      "textAr": "خلي المخمن يستجوبك مرتين",
+      "textEn": "Get the guesser to interrogate you twice"
+    },
+    {
+      "id": "m15",
+      "textAr": "اتهم حد إنه كداب قدام الكل ويطلع كداب فعلاً مرتين",
+      "textEn": "Publicly accuse someone of lying and be right twice"
+    },
+    {
+      "id": "m16",
+      "textAr": "كن آخر واحد يجاوب في ٣ جولات",
+      "textEn": "Be the last to answer in 3 rounds"
+    },
+    {
+      "id": "m17",
+      "textAr": "خلي المخمن يقول «إيه ده؟!»",
+      "textEn": "Make the guesser say “What?!”"
+    },
+    {
+      "id": "m18",
+      "textAr": "اتنهد بصوت عالي بعد إجابات الناس ٣ مرات",
+      "textEn": "Sigh loudly after others' answers 3 times"
+    },
+    {
+      "id": "m19",
+      "textAr": "استخدم كلمة إنجليزي في إجابتك ٣ جولات ورا بعض",
+      "textEn": "Use an English word in your answer 3 rounds in a row"
+    },
+    {
+      "id": "m20",
+      "textAr": "قول رقم في كل إجابة لمدة ٤ جولات",
+      "textEn": "Include a number in every answer for 4 rounds"
+    },
+    {
+      "id": "m21",
+      "textAr": "سقف لإجابة لاعب تاني ٣ مرات من غير ما تشرح ليه",
+      "textEn": "Applaud another player's answer 3 times without explaining"
+    },
+    {
+      "id": "m22",
+      "textAr": "قلد صوت أو حركة لاعب تاني في إجابة",
+      "textEn": "Imitate another player's voice or gesture in an answer"
+    },
+    {
+      "id": "m23",
+      "textAr": "وانت الصادق، اتصرف متوتر جداً ومحدش يختارك",
+      "textEn": "While holding the truth, act very nervous and don't get picked"
+    },
+    {
+      "id": "m24",
+      "textAr": "خلي لاعبين اتنين يضحكوا في نفس الوقت",
+      "textEn": "Make two players laugh at the same time"
+    },
+    {
+      "id": "m25",
+      "textAr": "قول «أنا عمري ما كدبت» وانت ماسك كارت كداب",
+      "textEn": "Say “I've never lied” while holding a liar card"
+    },
+    {
+      "id": "m26",
+      "textAr": "خلي حد يقولك «إنت بتكدب!» بصوت عالي",
+      "textEn": "Get someone to shout “You're lying!” at you"
+    },
+    {
+      "id": "m27",
+      "textAr": "اعمل صوت حيوان في إجابة من غير ما حد يعلق",
+      "textEn": "Make an animal sound in an answer without anyone commenting"
+    },
+    {
+      "id": "m28",
+      "textAr": "خلي حد يقوم من مكانه",
+      "textEn": "Get someone to stand up"
+    },
+    {
+      "id": "m29",
+      "textAr": "اسأل المخمن «إنت متأكد؟» ٣ مرات",
+      "textEn": "Ask the guesser “Are you sure?” 3 times"
+    },
+    {
+      "id": "m30",
+      "textAr": "خلي لاعب تاني يقلدك",
+      "textEn": "Get another player to imitate you"
+    },
+    {
+      "id": "m31",
+      "textAr": "قول كلمة «ملوخية» في إجابتين",
+      "textEn": "Say “molokhia” in 2 answers"
+    },
+    {
+      "id": "m32",
+      "textAr": "اطلب من المخمن يعيد السؤال مرتين",
+      "textEn": "Ask the guesser to repeat the question twice"
+    },
+    {
+      "id": "m33",
+      "textAr": "اغمز للمخمن ٣ مرات من غير ما يلاحظ",
+      "textEn": "Wink at the guesser 3 times without them noticing"
+    },
+    {
+      "id": "m34",
+      "textAr": "خلي المخمن يضحك وهو بيختار",
+      "textEn": "Make the guesser laugh while choosing"
+    },
+    {
+      "id": "m35",
+      "textAr": "غير مكانك في القعدة مرتين من غير ما حد يسأل ليه",
+      "textEn": "Switch seats twice without anyone asking why"
+    },
+    {
+      "id": "m36",
+      "textAr": "اتتهم إنك كداب وانت صادق",
+      "textEn": "Get accused of lying while telling the truth"
+    },
+    {
+      "id": "m37",
+      "textAr": "امدح نفسك في ٣ إجابات",
+      "textEn": "Brag about yourself in 3 answers"
+    },
+    {
+      "id": "m38",
+      "textAr": "ابدأ إجابتين بـ «بصراحة ومن غير مبالغة»",
+      "textEn": "Start 2 answers with “Honestly, no exaggeration”"
+    },
+    {
+      "id": "m39",
+      "textAr": "اقنع لاعب بمعلومة غلط عن نفسك لحد آخر اللعبة",
+      "textEn": "Convince a player of a fake fact about yourself until the end"
+    },
+    {
+      "id": "m40",
+      "textAr": "خلي المخمن يغير اختياره قبل ما يثبته",
+      "textEn": "Make the guesser change their pick before locking it in"
+    },
+    {
+      "id": "m41",
+      "textAr": "قول مثل شعبي في ٣ إجابات",
+      "textEn": "Use a folk proverb in 3 answers"
+    },
+    {
+      "id": "m42",
+      "textAr": "اتكلم بإيديك بزيادة جداً في ٣ إجابات",
+      "textEn": "Use wildly exaggerated hand gestures in 3 answers"
+    },
+    {
+      "id": "m43",
+      "textAr": "خلي لاعب يعتذرلك",
+      "textEn": "Get a player to apologise to you"
+    },
+    {
+      "id": "m44",
+      "textAr": "خلي حد يقول «صح!» على إجابة كدب قلتها",
+      "textEn": "Get someone to say “True!” to one of your lies"
+    },
+    {
+      "id": "m45",
+      "textAr": "دافع عن إجابة لاعب تاني كأنها إجابتك مرتين",
+      "textEn": "Defend another player's answer as if it were yours, twice"
+    },
+    {
+      "id": "m46",
+      "textAr": "اسأل «مين اللي عامل الأسئلة دي؟!» مرتين",
+      "textEn": "Ask “Who wrote these questions?!” twice"
+    },
+    {
+      "id": "m47",
+      "textAr": "قول قافية في ٣ إجابات",
+      "textEn": "Make a rhyme in 3 answers"
+    },
+    {
+      "id": "m48",
+      "textAr": "خلي حد يقول «مستحيل!»",
+      "textEn": "Get someone to say “Impossible!”"
+    },
+    {
+      "id": "m49",
+      "textAr": "خلي لاعب يقولك «إنت غريب»",
+      "textEn": "Get a player to call you weird"
+    },
+    {
+      "id": "m50",
+      "textAr": "اشكر المخمن بعد اختياره ٣ جولات ورا بعض",
+      "textEn": "Thank the guesser after their pick 3 rounds in a row"
+    }
+  ],
+  "punishments": [
+    {
+      "id": "p01",
+      "textAr": "قطّع بصلة ني من غير ما تعيط",
+      "textEn": "Chop a raw onion without crying"
+    },
+    {
+      "id": "p02",
+      "textAr": "اعمل شاي أو قهوة للكل",
+      "textEn": "Make tea or coffee for everyone"
+    },
+    {
+      "id": "p03",
+      "textAr": "غني أغنية كاملة قدام الكل",
+      "textEn": "Sing a whole song in front of everyone"
+    },
+    {
+      "id": "p04",
+      "textAr": "ارقص ٣٠ ثانية من غير موسيقى",
+      "textEn": "Dance for 30 seconds with no music"
+    },
+    {
+      "id": "p05",
+      "textAr": "اتكلم بالفصحى لحد آخر السهرة",
+      "textEn": "Speak classical Arabic for the rest of the night"
+    },
+    {
+      "id": "p06",
+      "textAr": "كل حتة ليمون من غير ما تكشّر",
+      "textEn": "Eat a lemon slice without making a face"
+    },
+    {
+      "id": "p07",
+      "textAr": "البس الشراب في إيديك ١٠ دقايق",
+      "textEn": "Wear socks on your hands for 10 minutes"
+    },
+    {
+      "id": "p08",
+      "textAr": "قلّد مشهد مشهور من فيلم مصري",
+      "textEn": "Act out a famous scene from an Egyptian film"
+    },
+    {
+      "id": "p09",
+      "textAr": "امشي زي البطريق لحد المطبخ وارجع",
+      "textEn": "Walk like a penguin to the kitchen and back"
+    },
+    {
+      "id": "p10",
+      "textAr": "قول نكتة.. ولو محدش ضحك قول تانية",
+      "textEn": "Tell a joke; if nobody laughs, tell another"
+    },
+    {
+      "id": "p11",
+      "textAr": "نضّف الترابيزة بعد السهرة",
+      "textEn": "Clean the table after the gathering"
+    },
+    {
+      "id": "p12",
+      "textAr": "اعزم الكل على حاجة ساقعة",
+      "textEn": "Buy everyone a cold drink"
+    },
+    {
+      "id": "p13",
+      "textAr": "اعمل ٢٠ ضغط",
+      "textEn": "Do 20 push-ups"
+    },
+    {
+      "id": "p14",
+      "textAr": "اتكلم بصوت مذيع أخبار ١٠ دقايق",
+      "textEn": "Talk like a news anchor for 10 minutes"
+    },
+    {
+      "id": "p15",
+      "textAr": "الفايز يختارلك صورة بروفايلك ليوم كامل",
+      "textEn": "The winner picks your profile photo for a day"
+    }
+  ]
+}
