@@ -9,12 +9,12 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 0 setup: T-002 done (Expo Go and web verified); T-001 in progress (app ID set; store accounts pending) |
-| Stopped at | 2026-10-03: app ID `com.mali.haltita` set and pushed on branch `t/T-001-app-id` (built on the unmerged `t/T-002-mark-done`, also pushed). No PRs open yet |
-| Next step | 1) Open a PR for `t/T-002-mark-done` and merge it, then a PR for `t/T-001-app-id` and merge it. 2) Owner: create the Expo and GitHub accounts; submit Apple Developer and Google Play Console enrolments. 3) Start **T-003** on `t/T-003-docs-content` from `main` |
-| Next task | **T-003** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 0 setup: T-002 and T-003 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
+| Stopped at | 2026-10-04: T-003 done on `t/T-003-docs-content` (rebased on `main`), PR open. PRs #2 and #3 merged |
+| Next step | 1) Merge the T-003 PR. 2) Owner: add the `docs/assets` images (needed by T-015). 3) Start **T-004** on `t/T-004-tooling` from `main` |
+| Next task | **T-004** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
-| Blockers | Apple Developer and Google Play Console approval pending (T-001) |
+| Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
 ## 2. Environment and setup notes (no secret values here)
 
@@ -82,6 +82,15 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-04: T-003 Docs, content, AI entry point
+
+- **Done:** `AGENTS.md` (pointer to the docs for non-Claude tools, mirrors `CLAUDE.md`); `README.md` rewritten (summary, stack, Codespaces setup, docs index); `docs/assets/README.md` created (lists the four reference images from `design.md` and their status).
+- **Content:** the owner's `content.json` added **unchanged** (same SHA-256) at `src/content/content.json`. Checked: `version` "3.1"; 100 questions (`q001`–`q100`), 50 challenges (`c01`–`c50`), 50 missions (`m01`–`m50`), 15 punishments (`p01`–`p15`); IDs unique and sequential; all fields present; `familySafe: false` only on `q035` and `q036`. Brand check: no banned terms. "sugar cubes" appears only in the q015 trivia answer (wombat droppings), not as branding, so it was kept.
+- **Pending (owner):** the `docs/assets` images (needed by T-015).
+- **T-001 update (owner):** the Expo account and the GitHub repo exist. Apple Developer and Google Play Console enrolments are in progress; the owner will complete them after coding and testing.
+- **Checks:** `tsc --noEmit` passes. There are no `lint`/`test` scripts yet (T-004).
+- **Next:** T-004.
 
 ### 2026-10-03: T-001 Identifiers and accounts (in progress)
 
