@@ -8,7 +8,7 @@
 
 ## Phase 0: Accounts, repo and setup
 
-- [ ] **T-001** 👤 **Identifiers and accounts:** choose the permanent app ID `com.<owner>.haltita`; create an Expo account; create a private GitHub repo `haltita`; **start Apple Developer enrolment ($99/year) and the Google Play Console account ($25)** now, because approval can take days. · F23
+- [~] **T-001** 👤 **Identifiers and accounts:** choose the permanent app ID `com.<owner>.haltita`; create an Expo account; create a private GitHub repo `haltita`; **start Apple Developer enrolment ($99/year) and the Google Play Console account ($25)** now, because approval can take days. · F23
   - Done when: the app ID is recorded in `memory.md` §2; the Expo and GitHub accounts exist; both store enrolments are submitted.
 - [x] **T-002** **Create the Expo app:** `create-expo-app` (TypeScript + Router) in Codespaces; set `name`, `slug`, `ios.bundleIdentifier`, `android.package`; portrait only; remove the demo screens.
   - Done when: it opens in Expo Go (`--tunnel`) and on web.

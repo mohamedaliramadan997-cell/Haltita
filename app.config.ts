@@ -1,7 +1,7 @@
 import type { ExpoConfig } from 'expo/config';
 
-// TODO(T-001): replace the placeholder with the permanent app ID before the first EAS build.
-const APP_ID = 'com.example.haltita';
+// Permanent app ID (T-001): iOS bundle ID and Android package. Never change it after the first store upload.
+const APP_ID = 'com.mali.haltita';
 
 const config: ExpoConfig = {
   name: 'حالتيتا',
