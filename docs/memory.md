@@ -9,7 +9,7 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 0 setup: T-002 scaffolded (awaiting Expo Go check); T-001 still open |
+| Phase | Phase 0 setup: T-002 done (Expo Go and web verified); T-001 still open |
 | Next task | **T-001**: identifiers and accounts (owner); then T-003 |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Permanent app ID not chosen (T-001); `com.example.haltita` placeholder in `app.config.ts` |
@@ -86,9 +86,9 @@
 - **Done:** scaffolded with `create-expo-app` (default template, **Expo SDK 57**, RN 0.86, TypeScript, Expo Router) on branch `t/T-002-create-expo-app`. Replaced `app.json` with `app.config.ts`: name حالتيتا, slug `haltita`, portrait only, phones only (`supportsTablet: false`), `userInterfaceStyle: dark`. Removed the demo screens, components, hooks and assets, plus their unused dependencies (`@expo/ui`, `expo-device`, `expo-glass-effect`, `expo-image`, `expo-symbols`, `expo-web-browser`).
 - **Routes:** in the root `app/` per `architecture.md` §3. The SDK 57 template defaults to `src/app/`. The tsconfig alias `@/*` points to `src/*`.
 - **Placeholder:** `com.example.haltita` is used for the bundle ID and package until T-001 sets the permanent ID. It **must** be replaced before the first EAS build.
-- **Checks:** `tsc --noEmit` passes; `expo-doctor` passes 21/21; `expo export --platform web` builds. There are no `lint`/`test` scripts yet (T-004). The Expo Go (`--tunnel`) check is left to the owner.
+- **Checks:** `tsc --noEmit` passes; `expo-doctor` passes 21/21; `expo export --platform web` builds. There are no `lint`/`test` scripts yet (T-004). 2026-10-03: the owner confirmed the app opens in Expo Go on their phone.
 - **Docs fix (owner):** the folder `Docs\` was renamed to `docs/`, the unrelated `DESIGN.md` style reference was deleted, and `design_1.md` was renamed to `design.md`. The docs and `CLAUDE.md` were committed with this branch.
-- **Next:** owner verifies on Expo Go, then T-001 (app ID) and T-003.
+- **Next:** T-001 (app ID), then T-003.
 
 ### 2026-10-03: Architecture review (planning)
 
