@@ -1,0 +1,10 @@
+node_modules/
+.expo/
+dist/
+coverage/
+package-lock.json
+# Owned by the owner; formatted by hand.
+docs/
+*.md
+# Read-only game content (rules.md §7): never reformat.
+src/content/content.json

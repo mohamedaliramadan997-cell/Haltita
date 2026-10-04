@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 0 setup: T-002 and T-003 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
-| Stopped at | 2026-10-04: T-003 done on `t/T-003-docs-content` (rebased on `main`), PR open. PRs #2 and #3 merged |
-| Next step | 1) Merge the T-003 PR. 2) Owner: add the `docs/assets` images (needed by T-015). 3) Start **T-004** on `t/T-004-tooling` from `main` |
-| Next task | **T-004** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 0 setup: T-002, T-003 and T-004 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
+| Stopped at | 2026-10-04: T-004 done on `t/T-004-tooling`, PR open |
+| Next step | 1) Merge the T-004 PR. 2) Owner: add the `docs/assets` images (needed by T-015). 3) Start **T-005** on `t/T-005-libraries` from `main` |
+| Next task | **T-005** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -83,6 +83,15 @@
 
 ## 6. Session log
 
+### 2026-10-04: T-004 Tooling
+
+- **Done:** dev dependencies installed with `npx expo install` (SDK-matched): `eslint` 9 + `eslint-config-expo` (flat config) + `eslint-config-prettier`, `prettier` 3, `jest` 29 + `jest-expo` + `@types/jest` 29 (pinned to 29 to match Jest). `eslint-config-prettier` is a small dev-only addition so ESLint and Prettier don't conflict.
+- **Config:** `eslint.config.js` adds `no-console` (all files), and for TS files `no-explicit-any` and `ban-ts-comment` (`@ts-ignore`/`@ts-expect-error` only with a description). `.prettierrc` (single quotes, trailing commas, width 100); `.prettierignore` excludes `docs/`, `*.md` and `src/content/content.json` (read-only). `jest.config.js` has two projects: `app` (jest-expo) and `rules` (node, `firebase/**/*.test.ts`; T-033 wraps it in `firebase emulators:exec`). TypeScript `strict` was already on; `tsconfig.json` only reformatted by Prettier.
+- **Scripts:** `typecheck` (`tsc --noEmit`), `lint` (`eslint . && prettier --check .`), `format`, `test` (app project), `test:rules` (rules project). Both test scripts use `--passWithNoTests` until real tests exist.
+- **Checks:** `typecheck`, `lint`, `test` and `test:rules` pass; `expo-doctor` 21/21. A throwaway file confirmed all three lint rules fire and a jest-expo test runs (then deleted).
+- **Found for T-006:** `npm audit --audit-level=high` already fails on `main` (19 high, all inside Expo's own tree: `braces` via Metro/micromatch, `node-forge` via `@expo/cli`; no fixed versions; `npm audit fix --force` would downgrade Expo to SDK 44). The new dev tools raise it to 50 high (same advisories). T-006 must decide how CI handles this (e.g. `--omit=dev` or an allowlist); ask the owner, don't silence it.
+- **Next:** T-005.
+
 ### 2026-10-04: T-003 Docs, content, AI entry point
 
 - **Done:** `AGENTS.md` (pointer to the docs for non-Claude tools, mirrors `CLAUDE.md`); `README.md` rewritten (summary, stack, Codespaces setup, docs index); `docs/assets/README.md` created (lists the four reference images from `design.md` and their status).
@@ -136,3 +145,4 @@
 
 1. Rebrand the print-and-play PDF to match the app?
 2. ~~The owner's identifier for `com.<owner>.haltita`~~ Resolved 2026-10-03: `com.mali.haltita`.
+3. How should CI handle `npm audit --audit-level=high` failing on advisories inside Expo's own dependencies with no fix (`braces`, `node-forge`)? Decide at T-006.
