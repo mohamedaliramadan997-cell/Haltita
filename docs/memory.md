@@ -11,7 +11,7 @@
 |---|---|
 | Phase | Phase 1 foundation: T-010 done. Phase 0 done except T-001 (store accounts pending) |
 | Stopped at | 2026-10-18: T-010 done on `t/T-010-theme-tokens` |
-| Next step | Start **T-011** from `main`. Later: a separate task to upgrade all Expo packages to SDK 58 together |
+| Next step | Start **T-011** from `main`. The SDK 58 upgrade is **T-017** (end of Phase 1) |
 | Next task | **T-011** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
@@ -85,6 +85,10 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-18: Added T-017 (SDK 58 upgrade)
+
+- **Done:** added **T-017** to Phase 1 of `tasks.md` (owner request): upgrade all Expo packages to SDK 58 together (latest at the time: `expo` 58.0.14, React Native 0.88.0). It also covers the 6 patch mismatches from T-005. Placed at the end of Phase 1 so it lands before the game engine and Firebase work.
 
 ### 2026-10-18: T-010 Theme tokens
 
