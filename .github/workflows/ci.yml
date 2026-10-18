@@ -1,0 +1,47 @@
+# CI (architecture.md §11): every PR and every push to main must pass before merging.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      # Emulator-backed rules tests arrive with T-033 (firebase-tools + emulator step).
+      - name: Rules tests
+        run: npm run test:rules
+
+      # Fails on any high/critical advisory not listed in .github/audit-allowlist.json.
+      - name: Audit
+        run: node .github/scripts/audit-check.js
