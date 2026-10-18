@@ -15,7 +15,7 @@
 - [x] **T-003** **Docs, content, AI entry point:** `docs/` (6 files + `assets/`), `src/content/content.json`, README, and a `CLAUDE.md`/`AGENTS.md` pointer to the docs.
 - [x] **T-004** **Tooling:** `strict` TypeScript, ESLint (with `no-console`), Prettier, jest-expo; scripts `typecheck`, `lint`, `test`, `test:rules`.
 - [x] **T-005** **Install the approved JS-only libraries** (`rules.md` §5, excluding the native-only ones). Record the Expo SDK version.
-- [ ] **T-006** **CI:** `.github/workflows/ci.yml` (install, typecheck, lint, test, `npm audit --audit-level=high`), Dependabot, and `main` branch protection that requires CI.
+- [x] **T-006** **CI:** `.github/workflows/ci.yml` (install, typecheck, lint, test, `npm audit --audit-level=high`), Dependabot, and `main` branch protection that requires CI.
   - Done when: a test PR shows green checks.
 
 ## Phase 1: Foundation

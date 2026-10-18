@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 0 setup: T-002 to T-005 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
-| Stopped at | 2026-10-18: T-005 merged (PR #6); design reference images added to `docs/assets` |
-| Next step | Start **T-006** from `main` |
-| Next task | **T-006** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 0 setup done: T-002 to T-006 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
+| Stopped at | 2026-10-18: T-006 done on `t/T-006-ci` (PR #8, CI green) |
+| Next step | 1) Merge PR #8. 2) Start **T-010** from `main` |
+| Next task | **T-010** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -84,6 +84,17 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-18: T-006 CI
+
+- **Done:** `.github/workflows/ci.yml` (PRs and pushes to `main`; Node 24; `npm ci` → typecheck → lint → test → test:rules → audit), `.github/scripts/audit-check.js` + `.github/audit-allowlist.json` (ADR-031), `.github/dependabot.yml` (npm security updates only, weekly). Docs: `architecture.md` §11/§12.
+- **GitHub settings (owner-approved):** repo made **public** (ADR-032; history scanned first: no secret files or keys, only the owner's commit email is visible). Dependabot alerts and security updates on. `main` protection: required check `check` (the CI job), branches must be up to date, applies to admins too, no force pushes or deletions. No review requirement (solo owner).
+- **Checks:** all local scripts pass; the audit check passes, and a negative test (one advisory removed from the allowlist) failed as expected. PR #8 CI run green (69 s).
+- **Notes:**
+  - The required check is named `check` (the job id). Renaming the job means updating branch protection too.
+  - The emulator rules-test step comes with T-033 (`firebase-tools` + emulator in CI).
+  - `.gitignore` covers `.env*.local` but not a plain `.env`; worth adding before T-030 creates Firebase config (owner's call; repo is public now).
+  - Remove allowlist entries when the audit script prints "no longer reported" (e.g. after an Expo SDK upgrade).
 
 ### 2026-10-18: Design reference images (T-003 follow-up)
 
