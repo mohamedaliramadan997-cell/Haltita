@@ -43,6 +43,8 @@
 
 | ID | Date | Decision | Why | Alternatives considered |
 |---|---|---|---|---|
+| ADR-032 | 2026-10-18 | The GitHub repo is **public**, so `main` branch protection (CI required) is free | Branch protection on private repos needs GitHub Pro | GitHub Pro (~$4/month); no enforced protection |
+| ADR-031 | 2026-10-18 | CI audit fails on high/critical advisories **unless** they are in `.github/audit-allowlist.json` (reviewed; started with braces, node-forge, @grpc/grpc-js) | All current findings sit in Expo/Firebase/Jest with no fix that keeps SDK 57 (`npm audit fix --force` → SDK 44) | Strict `npm audit --audit-level=high` (always red); report only |
 | ADR-030 | 2026-10-03 | Google Play closed test (≥ 12 testers for 14 days) is planned into the beta phase | Required for new personal Play accounts | — |
 | ADR-029 | 2026-10-03 | Moderation: host kick in the lobby + local profanity filter + length limits; rooms are private | Store UGC expectations at low cost | Report/block system (overkill for private rooms) |
 | ADR-028 | 2026-10-03 | No device permissions requested | Simpler review, better privacy | — |

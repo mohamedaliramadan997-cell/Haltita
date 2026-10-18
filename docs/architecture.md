@@ -230,19 +230,19 @@ hosts/{uid}: { usedQuestionIds: { q042: true … }, lastRoomAt }
 
 ## 11. CI/CD and version control
 
-- **Repo:** private GitHub repository `haltita`.
-- **Branches:** `main` is always releasable. Work happens on task branches `t/<task-id>-<slug>` and merges into `main` through a pull request. The owner merges after CI passes.
+- **Repo:** **public** GitHub repository `Haltita` (public so branch protection is free; ADR-032). Nothing secret is ever committed (`rules.md` §4).
+- **Branches:** `main` is always releasable. Work happens on task branches `t/<task-id>-<slug>` and merges into `main` through a pull request. Branch protection on `main` requires the `CI` check to pass before merging.
 - **Commits:** `T<id>: <summary>` (one task = one commit or PR).
 - **Versioning:** `version` follows semver (1.0.0). Build numbers increment automatically through EAS (`autoIncrement`). `runtimeVersion` uses the `appVersion` policy for EAS Update compatibility.
 
 | Workflow | Trigger | Steps |
 |---|---|---|
-| `ci.yml` | Every push or PR | install → `tsc --noEmit` → lint → `jest` → Firebase emulator rules tests → `npm audit --audit-level=high` |
+| `ci.yml` | Every PR and push to `main` | install → `tsc --noEmit` → lint → `jest` → Firebase emulator rules tests (emulator from T-033) → audit: high/critical advisories fail unless listed in `.github/audit-allowlist.json` (ADR-031) |
 | `release.yml` | Git tag `v*` | `eas build --platform all --profile production --non-interactive` → `eas submit` (iOS → TestFlight, Android → Play internal track) |
 | OTA (manual) | Owner runs it | `eas update --channel production` for JavaScript-only fixes. Native changes always need a new build |
 | Rules deploy | Manual, after rules tests pass | `firebase deploy --only database,hosting -P prod` |
 
-- **Dependabot** is enabled for npm security updates (weekly).
+- **Dependabot** is enabled for npm security updates (weekly). Version-bump PRs are off, because Expo packages move together through `npx expo install`.
 - **EAS profiles** (`eas.json`):
   - `development`: dev client, internal distribution
   - `preview`: internal APK / ad-hoc iOS for testers
@@ -276,7 +276,7 @@ hosts/{uid}: { usedQuestionIds: { q042: true … }, lastRoomAt }
 | A stranger guessing a room code | Codes expire with the room (24 h max); the host can **kick** in the lobby; no joining after start |
 | Offensive names or custom punishments | Visible only to people in that room; length limits; the host can kick. A basic Arabic/English profanity filter on names and custom punishments (local list) |
 | Leaked keys | No real secrets in the app; `EXPO_PUBLIC_*` values are public identifiers protected by rules and App Check |
-| Vulnerable dependencies | `npm audit` in CI + Dependabot |
+| Vulnerable dependencies | `npm audit` in CI (reviewed allowlist) + Dependabot |
 | Cheating host | Accepted risk (friends' game); documented |
 
 ## 13. Rate limiting and abuse protection
