@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 0 setup: T-002, T-003 and T-004 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
-| Stopped at | 2026-10-04: T-004 done on `t/T-004-tooling`, PR open |
-| Next step | 1) Merge the T-004 PR. 2) Owner: add the `docs/assets` images (needed by T-015). 3) Start **T-005** on `t/T-005-libraries` from `main` |
-| Next task | **T-005** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 0 setup: T-002 to T-005 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
+| Stopped at | 2026-10-18: T-005 done on `t/T-005-js-libs` |
+| Next step | 1) Merge the T-005 PR. 2) Owner: add the `docs/assets` images (needed by T-015). 3) Start **T-006** from `main` |
+| Next task | **T-006** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -23,7 +23,7 @@
 | App ID (iOS bundle and Android package) | `com.mali.haltita` *(set at T-001, 2026-10-03; permanent)* |
 | Store name | حالتيتا – Haltita |
 | Publisher | Owner's **personal** Apple and Google accounts |
-| Expo SDK | *(record at T-005)* |
+| Expo SDK | **57** (`expo` ~57.0.26, React Native 0.86.3, React 19.2.3) *(recorded at T-005, 2026-10-18)* |
 | Firebase projects | `haltita-dev`, `haltita-prod`; RTDB `europe-west1`; Spark plan |
 | Sentry | Project `haltita`; environments `development` / `preview` / `production` |
 | EAS | Profiles `development` / `preview` / `production`; update channels `preview` / `production` |
@@ -82,6 +82,21 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-18: T-005 Approved JS libraries
+
+- **Done:** installed with `npx expo install` (SDK 57-matched). Runtime: `firebase` 13, `zustand` 5, `@react-native-async-storage/async-storage` 2.2, `react-native-svg` 15.15, `@expo-google-fonts/lalezar`, `@expo-google-fonts/cairo`, `expo-haptics`, `expo-audio`, `expo-keep-awake`, `expo-crypto`, `expo-localization`. Dev: `@testing-library/react-native` 14, `@firebase/rules-unit-testing` 6. Reanimated, gesture-handler, expo-router and expo-font were already present (T-002).
+- **Required peers added:** `expo-asset` (required by `expo-audio`; part of the Expo SDK) and `test-renderer` (dev; required by Testing Library 14).
+- **Left out on purpose:** `@react-native-firebase/app` + `app-check` (native-only; App Check task), `@sentry/react-native` (T-081), `expo-dev-client` (T-080); the CLIs `eas-cli` and `firebase-tools` come with their tasks (EAS, T-033).
+- **Config plugins NOT added:** `expo install` asked to add the `expo-audio` and `expo-localization` plugins to `app.config.ts`. `expo-audio`'s plugin adds a **microphone permission** by default (`rules.md` §11), and playback works without it; if a dev-build task needs it, add it with `microphonePermission: false`. The `expo-localization` plugin (RTL/locales) belongs to T-012.
+- **Checks:** `typecheck` passes; `test` and `test:rules` pass (no tests yet); `expo-doctor` 20/21. A throwaway test (deleted) rendered with Testing Library and used zustand under jest-expo, and a Node `require` loaded `firebase/app`, `database`, `auth`, `app-check` (`CustomProvider`) and `rules-unit-testing`.
+- **Known issues (not fixed, out of scope):**
+  - `expo-doctor`: 6 patch mismatches that predate this task (`expo` 57.0.26→57.0.30, `expo-constants`, `expo-linking`, `expo-router`, `expo-splash-screen`, `jest-expo`). Bump them in a separate small task when the owner agrees.
+  - Importing the real `firebase` SDK in the jest-expo `app` project fails (ESM + `.mjs` in `@firebase/util` aren't transformed). App tests should mock Firebase behind `lib/`; if a real import is needed, handle it in the Firebase task.
+  - The `rules` jest project (T-004) has no TS/ESM transform, so `.test.ts` files there fail to parse. T-033 must add one (e.g. `babel-jest` with `babel-preset-expo`, or `ts-jest`, after asking).
+  - On this Windows checkout (`core.autocrlf=true`) `prettier --check` flags 7 untouched files for CRLF line endings; in Codespaces it passes. A `.gitattributes` with `* text=auto eol=lf` would fix it (owner's call).
+  - `npm audit`: 54 high / 16 moderate, still inside Expo's tree (see T-004 note); T-006 decides.
+- **Next:** T-006.
 
 ### 2026-10-04: T-004 Tooling
 
