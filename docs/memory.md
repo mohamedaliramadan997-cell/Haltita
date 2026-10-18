@@ -10,8 +10,8 @@
 | Item | Value |
 |---|---|
 | Phase | Phase 0 setup: T-002 to T-005 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
-| Stopped at | 2026-10-18: T-005 done on `t/T-005-js-libs` |
-| Next step | 1) Merge the T-005 PR. 2) Owner: add the `docs/assets` images (needed by T-015). 3) Start **T-006** from `main` |
+| Stopped at | 2026-10-18: T-005 merged (PR #6); design reference images added to `docs/assets` |
+| Next step | Start **T-006** from `main` |
 | Next task | **T-006** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
@@ -82,6 +82,11 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-18: Design reference images (T-003 follow-up)
+
+- **Done:** the owner added `icon-concept.png`, `masky-poses.png` and `mockup-screens.png` to `docs/assets/` (from the ElevenLabs flow; each a 1280×720 PNG). Contents checked against `design.md`; `docs/assets/README.md` status updated. `cards-concept.png` is still not generated (T-061).
+- **Note:** `icon-concept.png` is 16:9 with the icon centred; crop it to a square before use (T-100), as `design.md` says.
 
 ### 2026-10-18: T-005 Approved JS libraries
 
