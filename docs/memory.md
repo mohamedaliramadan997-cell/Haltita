@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 0 setup done: T-002 to T-006 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
-| Stopped at | 2026-10-18: T-006 done on `t/T-006-ci` (PR #8, CI green) |
-| Next step | 1) Merge PR #8. 2) Start **T-010** from `main` |
-| Next task | **T-010** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 1 foundation: T-010 done. Phase 0 done except T-001 (store accounts pending) |
+| Stopped at | 2026-10-18: T-010 done on `t/T-010-theme-tokens` |
+| Next step | Start **T-011** from `main`. Later: a separate task to upgrade all Expo packages to SDK 58 together |
+| Next task | **T-011** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -43,6 +43,7 @@
 
 | ID | Date | Decision | Why | Alternatives considered |
 |---|---|---|---|---|
+| ADR-033 | 2026-10-18 | Type tokens `cardSub` 13/19 and `caption` 12/17 (were 13/18 and 12/16) | Meet `design.md`'s own rule: Cairo line height ≥ 1.4× | Keep the table values and drop the rule |
 | ADR-032 | 2026-10-18 | The GitHub repo is **public**, so `main` branch protection (CI required) is free | Branch protection on private repos needs GitHub Pro | GitHub Pro (~$4/month); no enforced protection |
 | ADR-031 | 2026-10-18 | CI audit fails on high/critical advisories **unless** they are in `.github/audit-allowlist.json` (reviewed; started with braces, node-forge, @grpc/grpc-js) | All current findings sit in Expo/Firebase/Jest with no fix that keeps SDK 57 (`npm audit fix --force` → SDK 44) | Strict `npm audit --audit-level=high` (always red); report only |
 | ADR-030 | 2026-10-03 | Google Play closed test (≥ 12 testers for 14 days) is planned into the beta phase | Required for new personal Play accounts | — |
@@ -84,6 +85,17 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-18: T-010 Theme tokens
+
+- **Done:** `src/theme/` with `colors.ts` (palette, `cardColors` per card type, semantic `colors`), `typography.ts` (font family names matching the `@expo-google-fonts` exports for T-011, the 9 type tokens, card auto-fit minimum 18, card font-scale cap 1.3), `layout.ts` (spacing, screen padding, radius, sticker `elevation`, card 63:88 at 82% width, sizes) and `index.ts`. Import with `@/theme`.
+- **Enforced:** an ESLint `no-restricted-syntax` rule blocks hex literals and literal `fontSize`/`lineHeight`/`letterSpacing` outside `src/theme` (probe file: 3 of 3 caught).
+- **Changed:** `app.config.ts` splash and Android adaptive-icon backgrounds now use `palette.plum900` (were Expo template blues), imported as `./src/theme/colors.ts`. The Expo config loader needs the `.ts` extension, so `tsconfig.json` got `allowImportingTsExtensions` (fine with `noEmit`). The placeholder Home uses `colors.background`/`colors.text`.
+- **tsconfig:** added `"types": ["jest"]`. TypeScript 6 no longer loads `@types/*` automatically, so the first test file failed typecheck without it.
+- **Tests:** `src/theme/theme.test.ts` (15 tests): every text pair in `design.md` §2.3 and every card band meets WCAG AA 4.5; pink on cream stays below it; line height ≥ font size.
+- **Checks:** typecheck, ESLint, tests and test:rules pass; `npx expo config` shows `#2E0F35`; `expo export --platform web` bundles. `prettier --check .` passes for all changed files; it still flags the known CRLF-only files on this Windows checkout.
+- **Line heights (ADR-033):** `design.md` §3's table broke its own 1.4× Cairo rule (`cardSub` 13/18, `caption` 12/16). The owner chose 13/19 and 12/17; `design.md` and `typography.ts` were updated together, and a test now enforces the 1.4× rule.
+- **Dependabot PR #9 closed (owner):** it bumped only `expo-router` to SDK 58. Moving to SDK 58 must be its own task, upgrading all Expo packages together with `npx expo install --fix` / the Expo upgrade guide. Expect Dependabot to propose such partial bumps again; close them the same way.
 
 ### 2026-10-18: T-006 CI
 

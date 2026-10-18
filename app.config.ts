@@ -1,5 +1,7 @@
 import type { ExpoConfig } from 'expo/config';
 
+import { palette } from './src/theme/colors.ts';
+
 // Permanent app ID (T-001): iOS bundle ID and Android package. Never change it after the first store upload.
 const APP_ID = 'com.mali.haltita';
 
@@ -18,7 +20,7 @@ const config: ExpoConfig = {
   android: {
     package: APP_ID,
     adaptiveIcon: {
-      backgroundColor: '#E6F4FE',
+      backgroundColor: palette.plum900,
       foregroundImage: './assets/images/android-icon-foreground.png',
       backgroundImage: './assets/images/android-icon-background.png',
       monochromeImage: './assets/images/android-icon-monochrome.png',
@@ -34,7 +36,7 @@ const config: ExpoConfig = {
     [
       'expo-splash-screen',
       {
-        backgroundColor: '#208AEF',
+        backgroundColor: palette.plum900,
         image: './assets/images/splash-icon.png',
         imageWidth: 76,
       },

@@ -20,7 +20,7 @@
 
 ## Phase 1: Foundation
 
-- [ ] **T-010** Theme tokens (`design.md`). Done when there are no hex values or font sizes outside `src/theme`.
+- [x] **T-010** Theme tokens (`design.md`). Done when there are no hex values or font sizes outside `src/theme`.
 - [ ] **T-011** Fonts (bundled Lalezar and Cairo) and the splash screen.
 - [ ] **T-012** i18n and RTL, `formatNumber()` (room codes stay Western), `expo-localization` default. · F16
 - [ ] **T-013** Content loader and validation (100/50/50/15). Unit tests.
