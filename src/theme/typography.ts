@@ -20,8 +20,8 @@ export const typography = {
   cardMain: { fontFamily: fonts.bodyExtraBold, fontSize: 24, lineHeight: 36 },
   bodyLg: { fontFamily: fonts.bodySemiBold, fontSize: 18, lineHeight: 28 },
   body: { fontFamily: fonts.body, fontSize: 16, lineHeight: 24 },
-  cardSub: { fontFamily: fonts.body, fontSize: 13, lineHeight: 18 },
-  caption: { fontFamily: fonts.bodySemiBold, fontSize: 12, lineHeight: 16 },
+  cardSub: { fontFamily: fonts.body, fontSize: 13, lineHeight: 19 },
+  caption: { fontFamily: fonts.bodySemiBold, fontSize: 12, lineHeight: 17 },
 } as const satisfies Record<string, TypeToken>;
 
 export type TypographyToken = keyof typeof typography;

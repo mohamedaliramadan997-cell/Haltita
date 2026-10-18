@@ -1,4 +1,4 @@
-import { cardColors, palette, typography } from '@/theme';
+import { cardColors, fonts, minCairoLineHeightRatio, palette, typography } from '@/theme';
 
 // WCAG 2.x relative luminance and contrast ratio.
 function luminance(hex: string): number {
@@ -47,6 +47,14 @@ describe('typography (design.md §3)', () => {
   it('every line height is at least the font size', () => {
     for (const token of Object.values(typography)) {
       expect(token.lineHeight).toBeGreaterThanOrEqual(token.fontSize);
+    }
+  });
+
+  it('Cairo line height is at least 1.4× the size', () => {
+    const display: string = fonts.display;
+    for (const token of Object.values(typography)) {
+      if (token.fontFamily === display) continue;
+      expect(token.lineHeight / token.fontSize).toBeGreaterThanOrEqual(minCairoLineHeightRatio);
     }
   });
 });

@@ -84,8 +84,8 @@
 | `cardMain` | Cairo 800 | 24 / 36 | Question and answer text on cards (auto-shrinks to 18) |
 | `bodyLg` | Cairo 600 | 18 / 28 | Instructions, buttons |
 | `body` | Cairo 400 | 16 / 24 | Rules, lists |
-| `cardSub` | Cairo 400 | 13 / 18 | English line on cards |
-| `caption` | Cairo 600 | 12 / 16 | Chips, round counter, status |
+| `cardSub` | Cairo 400 | 13 / 19 | English line on cards |
+| `caption` | Cairo 600 | 12 / 17 | Chips, round counter, status |
 
 - Arabic line height is never less than **1.4×** the size for Cairo.
 - Card text auto-fits from `cardMain` down to 18; if it still doesn't fit, it scrolls inside the card. Never truncate.
