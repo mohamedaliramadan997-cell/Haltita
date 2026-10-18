@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 0 setup done: T-002 to T-006 done; T-001 in progress (app ID, Expo and GitHub done; store accounts pending) |
-| Stopped at | 2026-10-18: T-006 done on `t/T-006-ci` (PR #8, CI green) |
-| Next step | 1) Merge PR #8. 2) Start **T-010** from `main` |
-| Next task | **T-010** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 1 foundation: T-010 done. Phase 0 done except T-001 (store accounts pending) |
+| Stopped at | 2026-10-18: T-010 done on `t/T-010-theme-tokens` |
+| Next step | 1) Merge the T-010 PR. 2) Owner: decide the `cardSub`/`caption` line-height question (see the T-010 entry). 3) Start **T-011** from `main` |
+| Next task | **T-011** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -84,6 +84,16 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-18: T-010 Theme tokens
+
+- **Done:** `src/theme/` with `colors.ts` (palette, `cardColors` per card type, semantic `colors`), `typography.ts` (font family names matching the `@expo-google-fonts` exports for T-011, the 9 type tokens, card auto-fit minimum 18, card font-scale cap 1.3), `layout.ts` (spacing, screen padding, radius, sticker `elevation`, card 63:88 at 82% width, sizes) and `index.ts`. Import with `@/theme`.
+- **Enforced:** an ESLint `no-restricted-syntax` rule blocks hex literals and literal `fontSize`/`lineHeight`/`letterSpacing` outside `src/theme` (probe file: 3 of 3 caught).
+- **Changed:** `app.config.ts` splash and Android adaptive-icon backgrounds now use `palette.plum900` (were Expo template blues), imported as `./src/theme/colors.ts`. The Expo config loader needs the `.ts` extension, so `tsconfig.json` got `allowImportingTsExtensions` (fine with `noEmit`). The placeholder Home uses `colors.background`/`colors.text`.
+- **tsconfig:** added `"types": ["jest"]`. TypeScript 6 no longer loads `@types/*` automatically, so the first test file failed typecheck without it.
+- **Tests:** `src/theme/theme.test.ts` (15 tests): every text pair in `design.md` §2.3 and every card band meets WCAG AA 4.5; pink on cream stays below it; line height ≥ font size.
+- **Checks:** typecheck, ESLint, tests and test:rules pass; `npx expo config` shows `#2E0F35`; `expo export --platform web` bundles. `prettier --check .` passes for all changed files; it still flags the known CRLF-only files on this Windows checkout.
+- **Open question (owner):** `design.md` §3 says Cairo line height is never below 1.4× the size, but its own table gives `cardSub` 13/18 (1.38×) and `caption` 12/16 (1.33×). Tokens follow the table as written. To meet the rule they'd become 13/19 and 12/17; the owner decides, then `design.md` and `typography.ts` are updated together.
 
 ### 2026-10-18: T-006 CI
 

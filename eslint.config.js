@@ -16,6 +16,25 @@ module.exports = defineConfig([
     },
   },
   {
+    // design.md: every colour and font size comes from src/theme (T-010).
+    files: ['**/*.ts', '**/*.tsx'],
+    ignores: ['src/theme/**'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'Literal[value=/^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/]',
+          message: 'Use a colour token from src/theme instead of a hex value.',
+        },
+        {
+          selector:
+            'Property[key.name=/^(fontSize|lineHeight|letterSpacing)$/][value.type="Literal"]',
+          message: 'Use a typography token from src/theme instead of a raw font size.',
+        },
+      ],
+    },
+  },
+  {
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
       // rules.md §10: no `any`, no @ts-ignore without an explanatory comment.
