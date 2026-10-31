@@ -129,7 +129,7 @@ flowchart TD
 
 ## 5. Frontend notes
 
-- Arabic-first with forced RTL and an English toggle (`src/i18n`). Fonts are bundled.
+- Arabic-first with forced RTL and an English toggle that switches to LTR (`src/i18n`, ADR-035). Fonts are bundled.
 - Secret screens use `HoldToReveal`, which hides on release, on background and on blur.
 - The app connects to Firebase **only while inside a room** (`goOnline` on room enter, `goOffline` on leave). This saves connections (§18).
 - `expo-keep-awake` is active on `/room/*` and `/demo` only.

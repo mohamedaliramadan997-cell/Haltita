@@ -33,6 +33,7 @@ const config: ExpoConfig = {
   },
   plugins: [
     'expo-router',
+    ['expo-localization', { supportedLocales: ['ar', 'en'] }],
     [
       'expo-splash-screen',
       {

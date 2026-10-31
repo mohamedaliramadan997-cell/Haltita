@@ -3,6 +3,8 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 
+import { initLanguage } from '@/i18n';
+
 import RootLayout from '../../app/_layout';
 
 import { fonts } from './typography';
@@ -13,12 +15,16 @@ jest.mock('expo-splash-screen', () => ({
   preventAutoHideAsync: jest.fn(),
   hideAsync: jest.fn(),
 }));
+jest.mock('@/i18n', () => ({ initLanguage: jest.fn() }));
 
 const mockFonts = (loaded: boolean, error: Error | null) =>
   jest.mocked(useFonts).mockReturnValue([loaded, error]);
 
 describe('RootLayout fonts and splash', () => {
-  beforeEach(() => jest.clearAllMocks());
+  beforeEach(() => {
+    jest.clearAllMocks();
+    jest.mocked(initLanguage).mockResolvedValue();
+  });
 
   it('loads every font token', async () => {
     mockFonts(true, null);
@@ -30,6 +36,14 @@ describe('RootLayout fonts and splash', () => {
 
   it('keeps the splash up and renders nothing while fonts load', async () => {
     mockFonts(false, null);
+    await render(<RootLayout />);
+    expect(Stack).not.toHaveBeenCalled();
+    expect(SplashScreen.hideAsync).not.toHaveBeenCalled();
+  });
+
+  it('keeps the splash up until the language and direction are set', async () => {
+    mockFonts(true, null);
+    jest.mocked(initLanguage).mockReturnValue(new Promise(() => {}));
     await render(<RootLayout />);
     expect(Stack).not.toHaveBeenCalled();
     expect(SplashScreen.hideAsync).not.toHaveBeenCalled();
