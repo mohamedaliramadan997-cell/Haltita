@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 1 foundation: T-010 and T-011 done; T-017 done early except the Expo Go phone check. Phase 0 done except T-001 (store accounts pending) |
-| Stopped at | 2026-10-31: T-017 on `t/T-017-sdk58` |
-| Next step | Owner opens the app in Expo Go (SDK 58) to close T-017, then start **T-012** from `main` |
-| Next task | **T-012** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 1 foundation: T-010, T-011, T-012 and T-017 done. Phase 0 done except T-001 (store accounts pending) |
+| Stopped at | 2026-10-31: T-012 on `t/T-012-i18n-rtl` |
+| Next step | Merge the T-012 PR, then start **T-013** from `main` |
+| Next task | **T-013** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -43,6 +43,7 @@
 
 | ID | Date | Decision | Why | Alternatives considered |
 |---|---|---|---|---|
+| ADR-035 | 2026-10-31 | **Language:** a saved choice wins; otherwise an English device gets English and every other device gets Arabic. **Direction:** Arabic is RTL and English is LTR, and a change restarts the app once with `reloadAppAsync` from `expo` | Reconciles "Arabic by default" (`prd.md` F16) with "`expo-localization` default" (T-012); React Native only applies a direction change after a restart | Always Arabic until toggled; English UI kept RTL |
 | ADR-034 | 2026-10-31 | Develop **locally in VS Code on the owner's Windows PC** (was GitHub Codespaces); GitHub stays the source of truth through branches and PRs. Still no steps that need Android Studio, Xcode or a local emulator | Owner request | Stay on Codespaces |
 | ADR-033 | 2026-10-18 | Type tokens `cardSub` 13/19 and `caption` 12/17 (were 13/18 and 12/16) | Meet `design.md`'s own rule: Cairo line height ≥ 1.4× | Keep the table values and drop the rule |
 | ADR-032 | 2026-10-18 | The GitHub repo is **public**, so `main` branch protection (CI required) is free | Branch protection on private repos needs GitHub Pro | GitHub Pro (~$4/month); no enforced protection |
@@ -86,6 +87,18 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-31: T-012 i18n and RTL
+
+- **Done:** `src/i18n` (`ar.ts`, `en.ts`, `index.ts`) and `src/lib/formatNumber.ts`. Components call `useI18n()` for `language`, `strings` and `formatNumber`; `en.ts` is typed from `ar.ts`, so a missing key fails typecheck. The placeholder Home now uses `strings.appName`. Only `appName` exists so far: later tasks add their strings, taking the copy from `design.md` §8.
+- **Language and direction (ADR-035):** the choice is stored with Zustand `persist` under `ht.language.v1`. `app/_layout.tsx` holds the splash until `initLanguage()` finishes. On native a wrong direction sets `allowRTL` and `forceRTL`, then restarts once; on web it sets `dir` and `lang` on `<html>` with no restart.
+- **Restart guard:** `triedRTL` stops a restart loop on a device that ignores the direction change; the app then opens in the wrong direction rather than never opening. The write is awaited before restarting, which relies on `persist`'s `setState` returning the write promise (its type says `void`; a test covers it).
+- **Room codes:** `formatNumber` only accepts numbers and room codes are strings rendered as they are, so they stay Western.
+- **Config:** added the `expo-localization` plugin with `supportedLocales: ['ar', 'en']` (T-005 deferred it here). It adds no permissions, but it's a native change that only takes effect in a build, not in Expo Go.
+- **For T-071:** the Settings toggle calls `setLanguage()`, and should show a failure toast because it rejects if storage fails. **For T-016:** `initLanguage()` has a `shortcut:` comment to report failures to `log.error`.
+- **Checks:** typecheck, ESLint and tests (36) pass; test:rules passes (no tests yet); Prettier passes with line endings ignored (known CRLF issue, so `npm run lint` still fails at `prettier --check` on this checkout); `expo-doctor` 20/20; `expo export --platform all --clear` bundles. In a served web build under headless Chrome, `ar` gave Arabic and `rtl`, `en` gave English and `ltr`, and `fr` gave Arabic and `rtl`.
+- **Phone check (owner, Samsung S25 Ultra in English, Expo Go SDK 58):** the app opens and shows "Haltita" on the plum background, which also closes **T-017**. Expo Go first showed "Something went wrong"; it cleared before the cause was identified (the server, bundle and firewall all checked out from the PC). If it comes back, start from the error log and `http://<PC IP>:8081/status` in the phone's browser.
+- **Not verified:** Arabic on a real phone, and the direction change and restart in Expo Go or a build (an English phone never restarts). No screen yet uses `start`/`end` layout, so mirroring itself is also unchecked.
 
 ### 2026-10-31: T-017 Upgrade to Expo SDK 58
 
