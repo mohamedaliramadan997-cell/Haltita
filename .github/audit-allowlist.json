@@ -7,20 +7,6 @@
       "via": "firebase -> @firebase/firestore",
       "reason": "Firestore is not used (we use RTDB, ADR-005); grpc-js is never loaded.",
       "added": "2026-10-18"
-    },
-    {
-      "id": "GHSA-qr28-fpjm-wq7f",
-      "package": "decode-uri-component",
-      "via": "expo-router -> query-string",
-      "reason": "Ships in the app. Denial of service only: a crafted link could hang that one phone, with no data exposed. The fix is a major version that query-string 7 doesn't allow. Review at T-017.",
-      "added": "2026-10-31"
-    },
-    {
-      "id": "GHSA-mrhx-c7xc-m3w5",
-      "package": "zod",
-      "via": "@expo/cli, eslint-plugin-react-hooks",
-      "reason": "Build tooling only; not shipped in the app bundle. The fix is a major version these tools don't allow. Review at T-017.",
-      "added": "2026-10-31"
     }
   ]
 }

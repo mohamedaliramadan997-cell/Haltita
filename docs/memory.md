@@ -9,9 +9,9 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 1 foundation: T-010 and T-011 done. Phase 0 done except T-001 (store accounts pending) |
-| Stopped at | 2026-10-31: T-011 done on `t/T-011-fonts-splash` |
-| Next step | Start **T-012** from `main`. The SDK 58 upgrade is **T-017** (end of Phase 1) |
+| Phase | Phase 1 foundation: T-010 and T-011 done; T-017 done early except the Expo Go phone check. Phase 0 done except T-001 (store accounts pending) |
+| Stopped at | 2026-10-31: T-017 on `t/T-017-sdk58` |
+| Next step | Owner opens the app in Expo Go (SDK 58) to close T-017, then start **T-012** from `main` |
 | Next task | **T-012** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
@@ -23,7 +23,7 @@
 | App ID (iOS bundle and Android package) | `com.mali.haltita` *(set at T-001, 2026-10-03; permanent)* |
 | Store name | حالتيتا – Haltita |
 | Publisher | Owner's **personal** Apple and Google accounts |
-| Expo SDK | **57** (`expo` ~57.0.26, React Native 0.86.3, React 19.2.3) *(recorded at T-005, 2026-10-18)* |
+| Expo SDK | **58** (`expo` 58.0.22, React Native 0.88.1, React 19.3.0) *(upgraded at T-017, 2026-10-31)* |
 | Firebase projects | `haltita-dev`, `haltita-prod`; RTDB `europe-west1`; Spark plan |
 | Sentry | Project `haltita`; environments `development` / `preview` / `production` |
 | EAS | Profiles `development` / `preview` / `production`; update channels `preview` / `production` |
@@ -86,6 +86,19 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-31: T-017 Upgrade to Expo SDK 58
+
+- **Done (owner asked to take it before T-012):** all Expo packages moved together to SDK 58: `expo` 58.0.22, React Native 0.88.1, React 19.3.0, Reanimated 4.7, Gesture Handler 3.3, Jest 30, `jest-expo` 58, `eslint-config-expo` 58. No app code changed.
+- **Lockfile regenerated:** `expo install --fix` failed with `ERESOLVE` on a stale `@expo/ui` 57 entry in the old lockfile. Deleting `package-lock.json` and `node_modules` fixed it without `--force`, so indirect dependencies also moved to their newest allowed versions.
+- **Audit allowlist:** the upgrade cleared `decode-uri-component` and `zod`, so both entries were removed. Only `@grpc/grpc-js` remains (Firestore isn't used).
+- **Checks:** `expo-doctor` 20/20; typecheck, ESLint, tests (20), test:rules and the audit check pass; Prettier passes with line endings ignored (known CRLF issue); `expo export` bundles iOS, Android and web with `--clear`.
+- **Not verified:** the app on a phone in Expo Go (SDK 58). T-017 stays `[~]` until the owner confirms it.
+- **For later tasks (from the SDK 58 notes):**
+  - **T-012:** `expo-localization` no longer force-enables RTL on iOS from the device locale; layout direction follows `I18nManager`, so set it explicitly.
+  - **T-014 and later:** the `StatusBar` `backgroundColor`/`translucent` props, `InteractionManager`, the `Touchable` root export and the `Modal` `animated` prop are gone; `ImageBackground` is deprecated.
+  - **T-080:** R8 is on by default in Android release builds; test release builds, because libraries using reflection may need keep rules.
+  - **T-092:** Node must be 22.13+, 24.3+ or 26+ (CI uses 24).
 
 ### 2026-10-31: T-011 Fonts and splash
 
