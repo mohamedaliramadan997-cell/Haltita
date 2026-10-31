@@ -7,6 +7,8 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 
+import { ContentErrorScreen } from '@/components/ui/ContentErrorScreen';
+import { contentProblems } from '@/content';
 import { initLanguage } from '@/i18n';
 import { fonts } from '@/theme';
 
@@ -34,6 +36,8 @@ export default function RootLayout() {
   }, [ready]);
 
   if (!ready) return null;
+  // shortcut: the problems aren't reported yet, send them to log.error at T-016.
+  if (contentProblems.length > 0) return <ContentErrorScreen />;
 
   return <Stack screenOptions={{ headerShown: false }} />;
 }
