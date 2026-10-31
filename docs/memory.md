@@ -96,6 +96,7 @@
 - **Checks:** typecheck, ESLint, tests (20) and test:rules pass. `npm run lint` still fails at `prettier --check` on this Windows checkout (known CRLF issue, now 17 files); `prettier --check --end-of-line auto .` passes. `expo export --platform web` bundles exactly the 4 fonts, and a served web build showed the wordmark in Lalezar.
 - **Not verified:** the native splash on a real device. Expo Go shows its own splash, so check it on the first development build (T-080). Fonts in Expo Go on a phone are also unchecked.
 - **`expo-doctor`:** 20/21; the failure is the known patch mismatches (now 5), cleared by T-017.
+- **CI audit (owner-approved, ADR-031 process):** 7 new high advisories blocked PR #12 and would block any PR. `npm update node-forge` (1.4.0 → 1.4.2, lockfile only) cleared 5 of them. `decode-uri-component` (ships in the app; denial of service only) and `zod` (build tooling) were added to the allowlist; both need major versions their parents don't allow, so **review them at T-017**. Removed the `braces` and `node-forge` entries, no longer reported.
 - **Docs (owner request, ADR-034):** `rules.md`, `prd.md`, `tasks.md` (T-030), `README.md` and this file now say local development. Older log entries and ADRs that mention Codespaces stay as history.
 
 ### 2026-10-18: Added T-017 (SDK 58 upgrade)
