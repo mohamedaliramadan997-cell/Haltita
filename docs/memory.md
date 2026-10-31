@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 1 foundation: T-010 done. Phase 0 done except T-001 (store accounts pending) |
-| Stopped at | 2026-10-18: T-010 done on `t/T-010-theme-tokens` |
-| Next step | Start **T-011** from `main`. The SDK 58 upgrade is **T-017** (end of Phase 1) |
-| Next task | **T-011** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 1 foundation: T-010 and T-011 done. Phase 0 done except T-001 (store accounts pending) |
+| Stopped at | 2026-10-31: T-011 done on `t/T-011-fonts-splash` |
+| Next step | Start **T-012** from `main`. The SDK 58 upgrade is **T-017** (end of Phase 1) |
+| Next task | **T-012** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -37,12 +37,13 @@
 - **Tech:** Expo + TypeScript; Firebase RTDB (host-authoritative, free Spark plan); anonymous auth; App Check; Sentry; EAS Build, Submit and Update; GitHub Actions.
 - A **solo demo mode** (local engine with bots) exists for store reviewers and for development.
 - **Origin:** started as a print-and-play game inspired by a YouTube show's game, then rebranded. Never reintroduce the old branding (`rules.md` §7).
-- **Owner:** Ali (Dubai). Develops in **GitHub Codespaces**. Fixes are given as **find-and-replace instructions**.
+- **Owner:** Ali (Dubai). Develops **locally in VS Code on a Windows PC** (ADR-034). Fixes are given as **find-and-replace instructions**.
 
 ## 4. Key decisions (ADR log)
 
 | ID | Date | Decision | Why | Alternatives considered |
 |---|---|---|---|---|
+| ADR-034 | 2026-10-31 | Develop **locally in VS Code on the owner's Windows PC** (was GitHub Codespaces); GitHub stays the source of truth through branches and PRs. Still no steps that need Android Studio, Xcode or a local emulator | Owner request | Stay on Codespaces |
 | ADR-033 | 2026-10-18 | Type tokens `cardSub` 13/19 and `caption` 12/17 (were 13/18 and 12/16) | Meet `design.md`'s own rule: Cairo line height ≥ 1.4× | Keep the table values and drop the rule |
 | ADR-032 | 2026-10-18 | The GitHub repo is **public**, so `main` branch protection (CI required) is free | Branch protection on private repos needs GitHub Pro | GitHub Pro (~$4/month); no enforced protection |
 | ADR-031 | 2026-10-18 | CI audit fails on high/critical advisories **unless** they are in `.github/audit-allowlist.json` (reviewed; started with braces, node-forge, @grpc/grpc-js) | All current findings sit in Expo/Firebase/Jest with no fix that keeps SDK 57 (`npm audit fix --force` → SDK 44) | Strict `npm audit --audit-level=high` (always red); report only |
@@ -85,6 +86,18 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-31: T-011 Fonts and splash
+
+- **Done:** `app/_layout.tsx` loads Lalezar 400 and Cairo 400/600/800 with `useFonts`, keyed by the `fonts` tokens, and holds the splash until they load. It imports per-weight subpaths (`@expo-google-fonts/cairo/400Regular`), so only these 4 `.ttf` files are bundled. The placeholder Home uses `typography.hero`.
+- **Font failure:** the splash hides and the app opens with system fonts, so the game stays playable. **T-016 must send `fontError` to `log.error`** (`shortcut:` comment in `_layout.tsx`).
+- **Splash:** `assets/images/splash-icon.png` is now a 1024×1024 transparent PNG with the wordmark (cream with a pink offset shadow) and the tagline "اكدب.. بس بذكاء", on the `plum900` background from `app.config.ts`; `imageWidth` went from 76 to 200. It was rendered from the real fonts with headless Chrome (no new dependency; the HTML source isn't committed). The text is kept inside the central circle that Android 12+ can mask.
+- **Tests:** `src/theme/fonts.test.tsx` (4 tests: all tokens loaded; splash held while loading; hidden on load; hidden on font failure). It lives outside `app/` because Expo Router treats every file there as a route.
+- **Checks:** typecheck, ESLint, tests (20) and test:rules pass. `npm run lint` still fails at `prettier --check` on this Windows checkout (known CRLF issue, now 17 files); `prettier --check --end-of-line auto .` passes. `expo export --platform web` bundles exactly the 4 fonts, and a served web build showed the wordmark in Lalezar.
+- **Not verified:** the native splash on a real device. Expo Go shows its own splash, so check it on the first development build (T-080). Fonts in Expo Go on a phone are also unchecked.
+- **`expo-doctor`:** 20/21; the failure is the known patch mismatches (now 5), cleared by T-017.
+- **CI audit (owner-approved, ADR-031 process):** 7 new high advisories blocked PR #12 and would block any PR. `npm update node-forge` (1.4.0 → 1.4.2, lockfile only) cleared 5 of them. `decode-uri-component` (ships in the app; denial of service only) and `zod` (build tooling) were added to the allowlist; both need major versions their parents don't allow, so **review them at T-017**. Removed the `braces` and `node-forge` entries, no longer reported.
+- **Docs (owner request, ADR-034):** `rules.md`, `prd.md`, `tasks.md` (T-030), `README.md` and this file now say local development. Older log entries and ADRs that mention Codespaces stay as history.
 
 ### 2026-10-18: Added T-017 (SDK 58 upgrade)
 

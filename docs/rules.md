@@ -17,8 +17,8 @@
    - suggest the commit message and branch name
 5. **When unsure** about scope, rules or design, ask one clear question. Don't guess.
 6. **Fix format (owner's preference):** for bug fixes and small edits, give **exact find-and-replace instructions** (file path, the exact text to find, the exact replacement), not full-file rewrites. Rewrite a whole file only when it's new or the change touches more than about 60% of it, and say so.
-7. **Environment:** the owner develops in **GitHub Codespaces**.
-   - **Early phases:** test with **Expo Go** (`npx expo start --tunnel`) and **browser tabs** (`--web`) as extra players.
+7. **Environment:** the owner develops **locally in VS Code on a Windows PC** and pushes to GitHub.
+   - **Early phases:** test with **Expo Go** (`npx expo start`, phone on the same Wi-Fi; add `--tunnel` if it can't connect) and **browser tabs** (`--web`) as extra players.
    - **From T-080 onwards:** test with **development builds** (`expo-dev-client`) built by EAS.
    - Never suggest steps that need Android Studio, Xcode or a local emulator.
 

@@ -8,11 +8,12 @@ Arabic (Egyptian) UI by default with RTL, plus an English toggle; cards are bili
 
 Expo (React Native) + TypeScript + Expo Router · Firebase Realtime Database (host-authoritative, anonymous auth, App Check) · Sentry · EAS Build, Submit and Update · GitHub Actions.
 
-## Getting started (GitHub Codespaces)
+## Getting started (local, VS Code)
 
 ```bash
 npm install
-npx expo start --tunnel   # scan the QR code with Expo Go
+npx expo start            # scan the QR code with Expo Go (phone on the same Wi-Fi)
+npx expo start --tunnel   # if the phone can't reach the computer over Wi-Fi
 npx expo start --web      # browser tabs as extra players
 ```
 

@@ -2,25 +2,25 @@
   "comment": "High/critical advisories accepted in CI (T-006). Each one sits inside Expo, Firebase or Jest with no fix that keeps SDK 57. Review on every Expo SDK upgrade and remove entries that no longer appear.",
   "advisories": [
     {
-      "id": "GHSA-vfj7-8cjw-p6xm",
-      "package": "braces",
-      "via": "metro, jest (micromatch)",
-      "reason": "Build/test tooling only; patterns are ours, not user input.",
-      "added": "2026-10-18"
-    },
-    {
-      "id": "GHSA-86w9-cpqp-85rv",
-      "package": "node-forge",
-      "via": "@expo/cli, @expo/code-signing-certificates",
-      "reason": "Expo CLI tooling; not shipped in the app bundle.",
-      "added": "2026-10-18"
-    },
-    {
       "id": "GHSA-m9gg-hp2v-232j",
       "package": "@grpc/grpc-js",
       "via": "firebase -> @firebase/firestore",
       "reason": "Firestore is not used (we use RTDB, ADR-005); grpc-js is never loaded.",
       "added": "2026-10-18"
+    },
+    {
+      "id": "GHSA-qr28-fpjm-wq7f",
+      "package": "decode-uri-component",
+      "via": "expo-router -> query-string",
+      "reason": "Ships in the app. Denial of service only: a crafted link could hang that one phone, with no data exposed. The fix is a major version that query-string 7 doesn't allow. Review at T-017.",
+      "added": "2026-10-31"
+    },
+    {
+      "id": "GHSA-mrhx-c7xc-m3w5",
+      "package": "zod",
+      "via": "@expo/cli, eslint-plugin-react-hooks",
+      "reason": "Build tooling only; not shipped in the app bundle. The fix is a major version these tools don't allow. Review at T-017.",
+      "added": "2026-10-31"
     }
   ]
 }

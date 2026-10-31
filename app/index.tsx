@@ -1,9 +1,9 @@
 import Constants from 'expo-constants';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { colors } from '@/theme';
+import { colors, typography } from '@/theme';
 
-// Placeholder Home screen; replaced by the real Home in later tasks (fonts T-011, i18n T-012).
+// Placeholder Home screen; replaced by the real Home in later tasks.
 export default function Home() {
   return (
     <View style={styles.container}>
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
   name: {
+    ...typography.hero,
     color: colors.text,
   },
 });
