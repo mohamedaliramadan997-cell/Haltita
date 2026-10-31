@@ -240,7 +240,7 @@ The MVP has no analytics. Success is judged by play-test sessions, which are log
 - **Both iOS and Android at launch**, published under the owner's **personal** developer accounts.
 - The free Firebase plan caps the app at **100 phones in rooms at once** (about 16 games). The upgrade path is in `architecture.md` §18.
 - New personal Google Play accounts must run a **closed test with ≥ 12 testers for 14 consecutive days** before production. Plan the friend group as beta testers.
-- Development happens in **GitHub Codespaces**. Expo Go is used early; development builds come from the hardening phase onwards.
+- Development happens **locally in VS Code on the owner's Windows PC**. Expo Go is used early; development builds come from the hardening phase onwards.
 
 ## 13. Open questions
 

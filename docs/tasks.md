@@ -21,7 +21,7 @@
 ## Phase 1: Foundation
 
 - [x] **T-010** Theme tokens (`design.md`). Done when there are no hex values or font sizes outside `src/theme`.
-- [ ] **T-011** Fonts (bundled Lalezar and Cairo) and the splash screen.
+- [x] **T-011** Fonts (bundled Lalezar and Cairo) and the splash screen.
 - [ ] **T-012** i18n and RTL, `formatNumber()` (room codes stay Western), `expo-localization` default. · F16
 - [ ] **T-013** Content loader and validation (100/50/50/15). Unit tests.
 - [ ] **T-014** Base UI: `Screen`, `Button` (primary/secondary/host/ghost), `Toast`, `Banner`, `ErrorBoundary`.
@@ -43,7 +43,7 @@
 
 ## Phase 3: Firebase foundation
 
-- [ ] **T-030** 👤+AI **Firebase projects:** `haltita-dev` and `haltita-prod` (Spark, RTDB in **europe-west1**, Anonymous Auth on). `app.config.ts` selects the config from `APP_ENV`; Codespaces/EAS environment variables are set; `.env.example` is added.
+- [ ] **T-030** 👤+AI **Firebase projects:** `haltita-dev` and `haltita-prod` (Spark, RTDB in **europe-west1**, Anonymous Auth on). `app.config.ts` selects the config from `APP_ENV`; local (`.env.local`) and EAS environment variables are set; `.env.example` is added.
 - [ ] **T-031** Auth: anonymous sign-in with AsyncStorage persistence (`browserSessionPersistence` on web).
   - Done when: the same uid survives a restart, and two browser tabs get different uids.
 - [ ] **T-032** **Security rules:** access (`architecture.md` §12.2), validation (sizes, ≤ 8 members) and **throttles** (§13).
