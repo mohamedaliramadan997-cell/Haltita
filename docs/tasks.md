@@ -23,7 +23,7 @@
 - [x] **T-010** Theme tokens (`design.md`). Done when there are no hex values or font sizes outside `src/theme`.
 - [x] **T-011** Fonts (bundled Lalezar and Cairo) and the splash screen.
 - [x] **T-012** i18n and RTL, `formatNumber()` (room codes stay Western), `expo-localization` default. · F16
-- [ ] **T-013** Content loader and validation (100/50/50/15). Unit tests.
+- [x] **T-013** Content loader and validation (100/50/50/15). Unit tests.
 - [ ] **T-014** Base UI: `Screen`, `Button` (primary/secondary/host/ghost), `Toast`, `Banner`, `ErrorBoundary`.
 - [ ] **T-015** Art: `Masky` (6 poses, 8 tints), `MaskToken`, `Pattern`, emblems, from `docs/assets` references.
 - [ ] **T-016** `lib/logger.ts` (console for now; Sentry is added in T-081) and `lib/profanity.ts` with tests.

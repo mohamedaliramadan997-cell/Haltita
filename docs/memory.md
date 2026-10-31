@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 1 foundation: T-010, T-011, T-012 and T-017 done. Phase 0 done except T-001 (store accounts pending) |
-| Stopped at | 2026-10-31: T-012 on `t/T-012-i18n-rtl` |
-| Next step | Merge the T-012 PR, then start **T-013** from `main` |
-| Next task | **T-013** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 1 foundation: T-010, T-011, T-012, T-013 and T-017 done. Phase 0 done except T-001 (store accounts pending) |
+| Stopped at | 2026-10-31: T-013 merged (PR for `t/T-013-content-loader`) |
+| Next step | Start **T-014** from `main` |
+| Next task | **T-014** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -87,6 +87,15 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-10-31: T-013 Content loader and validation
+
+- **Done:** `src/content/index.ts` exports `content` (typed from the JSON), `validateContent()` and `contentProblems`, which is checked once at startup. It checks the version, the counts (100/50/50/15), sequential IDs (which also makes them unique), non-empty Arabic and English text, question `number` and boolean `familySafe`. `content.json` is unchanged.
+- **Error screen (`rules.md` §7):** when `contentProblems` isn't empty, `app/_layout.tsx` shows `src/components/ui/ContentErrorScreen.tsx` instead of the app, and the splash still hides. T-014 can move it onto `Screen`.
+- **New copy, not from `design.md` §8 (owner to review):** `contentError`: "في مشكلة في بيانات اللعبة.. حدّث التطبيق وجرب تاني" / "There's a problem with the game data. Update the app and try again."
+- **Left for later:** lookups by ID and types per card come with the tasks that use them (T-020 onwards); the family-mode filter is T-087. **T-016 must report `contentProblems` to `log.error`** (`shortcut:` comment in `_layout.tsx`); Sentry scrubbing (T-081) must cover those messages because they contain question and mission IDs.
+- **Tests:** `src/content/content.test.ts` (real file plus broken copies) and `src/components/ui/ContentErrorScreen.test.tsx` (layout with invalid content).
+- **Not verified:** the error screen on a phone or in a browser; only a component test renders it, and the shipped content never triggers it.
 
 ### 2026-10-31: T-012 i18n and RTL
 
