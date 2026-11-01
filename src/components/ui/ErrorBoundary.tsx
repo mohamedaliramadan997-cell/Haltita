@@ -3,6 +3,7 @@ import { Component, type ReactNode } from 'react';
 import { Platform, StyleSheet, Text } from 'react-native';
 
 import { useI18n } from '@/i18n';
+import { log } from '@/lib/logger';
 import { colors, spacing, typography } from '@/theme';
 
 import { Button } from './Button';
@@ -16,8 +17,9 @@ function goHome() {
     window.location.assign('/');
     return;
   }
-  // shortcut: a failed restart isn't reported yet, send it to log.error at T-016.
-  reloadAppAsync('Back to home after a crash').catch(() => {});
+  reloadAppAsync('Back to home after a crash').catch((error) =>
+    log.error('Restart after a crash failed', error),
+  );
 }
 
 function ErrorFallback() {
@@ -40,7 +42,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, { hasError: boo
     return { hasError: true };
   }
 
-  // shortcut: the crash isn't reported yet, add componentDidCatch with log.error at T-016.
+  componentDidCatch(error: Error) {
+    log.error('App crashed', error);
+  }
 
   render() {
     return this.state.hasError ? <ErrorFallback /> : this.props.children;

@@ -12,6 +12,7 @@ import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
 import { Toast } from '@/components/ui/Toast';
 import { contentProblems } from '@/content';
 import { initLanguage } from '@/i18n';
+import { log } from '@/lib/logger';
 import { fonts } from '@/theme';
 
 SplashScreen.preventAutoHideAsync();
@@ -24,21 +25,24 @@ export default function RootLayout() {
     [fonts.bodyExtraBold]: Cairo_800ExtraBold,
   });
   // A font failure falls back to system fonts so the game stays playable.
-  // shortcut: the failure isn't reported yet, send fontError to log.error at T-016.
   const fontsReady = fontsLoaded || fontError !== null;
   const [languageReady, setLanguageReady] = useState(false);
   const ready = fontsReady && languageReady;
 
   useEffect(() => {
     initLanguage().then(() => setLanguageReady(true));
+    if (contentProblems.length > 0) log.error('Content validation failed', contentProblems);
   }, []);
+
+  useEffect(() => {
+    if (fontError) log.error('Font loading failed', fontError);
+  }, [fontError]);
 
   useEffect(() => {
     if (ready) SplashScreen.hideAsync();
   }, [ready]);
 
   if (!ready) return null;
-  // shortcut: the problems aren't reported yet, send them to log.error at T-016.
   if (contentProblems.length > 0) return <ContentErrorScreen />;
 
   return (

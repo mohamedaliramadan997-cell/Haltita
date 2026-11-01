@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 1 foundation: T-010 to T-015 and T-017 done. Phase 0 done except T-001 (store accounts pending) |
-| Stopped at | 2026-11-01: T-015 merged (PR for `t/T-015-art`); T-014 merged in PR #16 |
-| Next step | Start **T-016** from `main` |
-| Next task | **T-016** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | **Phase 1 foundation done** (T-010 to T-017). Phase 0 done except T-001 (store accounts pending) |
+| Stopped at | 2026-11-01: T-016 merged (PR for `t/T-016-logger-profanity`); merged task branches deleted locally and on GitHub |
+| Next step | Start **Phase 2** with **T-020** from `main` |
+| Next task | **T-020** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -87,6 +87,19 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-11-01: T-016 Logger and profanity filter
+
+- **Done:** `src/lib/logger.ts` (`log.info/warn/error`) prints to the console in development and does nothing in production until T-081 sends to Sentry (`shortcut:` comment). ESLint exempts only that file from `no-console`. Font failures, content problems, language setup failures, crashes (`componentDidCatch`) and failed restarts now call `log.error`, which clears every T-016 `shortcut:`.
+- **`src/lib/profanity.ts`:** `containsProfanity(text)` with a local English, Arabic and Franco-Arabic list. It matches whole words, so "Hassan", "مكسب" and "خولة" pass, and a short list of stems also matches inside longer words. It handles Arabic spelling variants and marks, case, repeated letters, lookalike characters (`sh1t`, `@ss`), spaced-out letters, invisible characters and glued "ال"/"يا". Digits are also checked as written, because they are letters in Franco-Arabic (`a7a`).
+- **Known limits (basic by design, `prd.md` line "Basic profanity filter"):** symbols inside a word (`f*ck`) get through, and a few real names are blocked (Dick, Koss).
+- **Owner to review:** the word list is my own and hasn't been checked by a native Egyptian speaker; edit `WORDS` and `STEMS`. The repo is public, so the list is too.
+- **For later tasks:** nothing calls `containsProfanity` yet: T-040, T-041 (names) and T-044 (custom punishment) must, showing "الاسم ده مش مسموح" from `design.md` §8 (add it to `src/i18n` then). **T-081:** `log.error('Content validation failed', …)` carries question and mission IDs, and crash errors can carry anything, so `beforeSend` must scrub them.
+- **Tests:** `src/lib/logger.test.ts`, `src/lib/profanity.test.ts` (blocked and allowed words, and every built-in punishment passes), plus a report assertion in each caller's existing test.
+- **Checks:** typecheck, ESLint and tests (133) pass; test:rules passes (no tests yet); Prettier passes with line endings ignored (known CRLF issue, so `npm run lint` still fails at `prettier --check` on this checkout); `expo-doctor` 20/20; `expo export --platform all --clear` bundles.
+- **Not verified:** the filter on a phone. It relies on `String.normalize` under Hermes, which only tests under Node have exercised; T-040 is the first place a phone will run it.
+- **T-015 follow-up (owner, Samsung S25 Ultra in Expo Go):** the star lattice and tiny masks both show behind the Home screen, so the `Pattern` risk on Android is cleared. Masky, the token and emblems aren't on any screen yet, so they're still unchecked on a phone.
+- **Branches:** deleted the merged `t/T-014-base-ui`, `t/T-015-art` and `t/T-016-logger-profanity`, locally and on GitHub.
 
 ### 2026-11-01: T-015 Art
 

@@ -16,6 +16,10 @@ module.exports = defineConfig([
     },
   },
   {
+    files: ['src/lib/logger.ts'],
+    rules: { 'no-console': 'off' },
+  },
+  {
     // design.md: every colour and font size comes from src/theme (T-010).
     files: ['**/*.ts', '**/*.tsx'],
     ignores: ['src/theme/**'],

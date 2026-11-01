@@ -6,6 +6,7 @@ import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
 import { formatNumber } from '@/lib/formatNumber';
+import { log } from '@/lib/logger';
 
 import { ar } from './ar';
 import { en } from './en';
@@ -63,9 +64,9 @@ export async function initLanguage(): Promise<void> {
   try {
     await useLanguageStore.persist.rehydrate();
     await applyDirection(currentLanguage(useLanguageStore.getState()));
-  } catch {
+  } catch (error) {
     // The app still opens, using the device language and the current direction.
-    // shortcut: the failure isn't reported yet, send it to log.error at T-016.
+    log.error('Language setup failed', error);
   }
 }
 
