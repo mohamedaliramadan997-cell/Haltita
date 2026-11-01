@@ -26,7 +26,7 @@
 - [x] **T-013** Content loader and validation (100/50/50/15). Unit tests.
 - [x] **T-014** Base UI: `Screen`, `Button` (primary/secondary/host/ghost), `Toast`, `Banner`, `ErrorBoundary`.
 - [x] **T-015** Art: `Masky` (6 poses, 8 tints), `MaskToken`, `Pattern`, emblems, from `docs/assets` references.
-- [ ] **T-016** `lib/logger.ts` (console for now; Sentry is added in T-081) and `lib/profanity.ts` with tests.
+- [x] **T-016** `lib/logger.ts` (console for now; Sentry is added in T-081) and `lib/profanity.ts` with tests.
 - [x] **T-017** **Upgrade to Expo SDK 58:** upgrade every Expo package together (`expo@^58` + `npx expo install --fix`, following Expo's SDK 58 upgrade guide; React Native 0.88). Never a single-package bump (Dependabot PRs like #9 get closed). Also clears the 6 patch mismatches noted at T-005.
   - Done when: `expo-doctor` passes every check; typecheck, lint and tests pass; the app opens in Expo Go (SDK 58) and on web; `memory.md` §2 records the new versions; `.github/audit-allowlist.json` is reviewed (remove entries the audit no longer reports).
 

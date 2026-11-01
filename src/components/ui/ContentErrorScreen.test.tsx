@@ -3,6 +3,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 
 import { ar } from '@/i18n/ar';
+import { log } from '@/lib/logger';
 
 import RootLayout from '../../../app/_layout';
 
@@ -13,6 +14,7 @@ jest.mock('expo-splash-screen', () => ({
   hideAsync: jest.fn(),
 }));
 jest.mock('@/content', () => ({ contentProblems: ['version: missing'] }));
+jest.mock('@/lib/logger');
 jest.mock('@/i18n', () => ({
   initLanguage: jest.fn(() => Promise.resolve()),
   useI18n: () => ({ strings: jest.requireActual('@/i18n/ar').ar }),
@@ -24,5 +26,6 @@ describe('RootLayout with invalid content', () => {
     expect(screen.getByText(ar.contentError)).toBeTruthy();
     expect(Stack).not.toHaveBeenCalled();
     expect(SplashScreen.hideAsync).toHaveBeenCalledTimes(1);
+    expect(log.error).toHaveBeenCalledWith('Content validation failed', ['version: missing']);
   });
 });

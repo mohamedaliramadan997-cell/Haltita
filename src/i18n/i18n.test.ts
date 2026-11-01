@@ -5,6 +5,7 @@ import { getLocales } from 'expo-localization';
 import { I18nManager, Platform } from 'react-native';
 
 import { formatNumber } from '@/lib/formatNumber';
+import { log } from '@/lib/logger';
 
 import { initLanguage, setLanguage, useI18n, useLanguageStore } from './index';
 
@@ -13,6 +14,7 @@ jest.mock('@react-native-async-storage/async-storage', () =>
 );
 jest.mock('expo', () => ({ reloadAppAsync: jest.fn() }));
 jest.mock('expo-localization', () => ({ getLocales: jest.fn() }));
+jest.mock('@/lib/logger');
 
 const KEY = 'ht.language.v1';
 
@@ -114,11 +116,13 @@ describe('language and direction', () => {
     expect(useLanguageStore.getState().triedRTL).toBeNull();
   });
 
-  it('still opens when storage fails', async () => {
+  it('still opens when storage fails, and reports it', async () => {
     mockIsRTL(false);
-    jest.mocked(AsyncStorage.setItem).mockRejectedValueOnce(new Error('storage full'));
+    const failure = new Error('storage full');
+    jest.mocked(AsyncStorage.setItem).mockRejectedValueOnce(failure);
     await expect(initLanguage()).resolves.toBeUndefined();
     expect(reloadAppAsync).not.toHaveBeenCalled();
+    expect(log.error).toHaveBeenCalledWith('Language setup failed', failure);
   });
 
   it('sets the document direction on web without restarting', async () => {

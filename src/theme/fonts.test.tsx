@@ -4,6 +4,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 
 import { initLanguage } from '@/i18n';
+import { log } from '@/lib/logger';
 
 import RootLayout from '../../app/_layout';
 
@@ -16,6 +17,7 @@ jest.mock('expo-splash-screen', () => ({
   hideAsync: jest.fn(),
 }));
 jest.mock('@/i18n', () => ({ initLanguage: jest.fn() }));
+jest.mock('@/lib/logger');
 
 const mockFonts = (loaded: boolean, error: Error | null) =>
   jest.mocked(useFonts).mockReturnValue([loaded, error]);
@@ -54,12 +56,15 @@ describe('RootLayout fonts and splash', () => {
     await render(<RootLayout />);
     expect(Stack).toHaveBeenCalled();
     expect(SplashScreen.hideAsync).toHaveBeenCalledTimes(1);
+    expect(log.error).not.toHaveBeenCalled();
   });
 
-  it('still opens the app if fonts fail, so the splash never sticks', async () => {
-    mockFonts(false, new Error('font failed'));
+  it('still opens the app if fonts fail, so the splash never sticks, and reports it', async () => {
+    const error = new Error('font failed');
+    mockFonts(false, error);
     await render(<RootLayout />);
     expect(Stack).toHaveBeenCalled();
     expect(SplashScreen.hideAsync).toHaveBeenCalledTimes(1);
+    expect(log.error).toHaveBeenCalledWith('Font loading failed', error);
   });
 });

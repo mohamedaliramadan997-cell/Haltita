@@ -4,6 +4,7 @@ import { reloadAppAsync } from 'expo';
 import { Platform, Text } from 'react-native';
 
 import { ar } from '@/i18n/ar';
+import { log } from '@/lib/logger';
 
 import { Banner } from './Banner';
 import { Button } from './Button';
@@ -16,6 +17,7 @@ jest.mock('@react-native-async-storage/async-storage', () =>
 );
 jest.mock('expo', () => ({ reloadAppAsync: jest.fn(() => Promise.resolve()) }));
 jest.mock('expo-localization', () => ({ getLocales: () => [{ languageCode: 'ar' }] }));
+jest.mock('@/lib/logger');
 
 describe('Screen', () => {
   it('renders its children', async () => {
@@ -124,10 +126,23 @@ describe('ErrorBoundary', () => {
       </ErrorBoundary>,
     );
     expect(screen.getByText(ar.crashMessage)).toBeTruthy();
+    expect(log.error).toHaveBeenCalledWith('App crashed', expect.any(Error));
 
     await fireEvent.press(screen.getByRole('button', { name: ar.backHome }));
     expect(reloadAppAsync).toHaveBeenCalledTimes(1);
     expect(await AsyncStorage.getItem('ht.lastRoom.v1')).toBe('12345');
+  });
+
+  it('reports a failed restart', async () => {
+    const failure = new Error('no restart');
+    jest.mocked(reloadAppAsync).mockRejectedValueOnce(failure);
+    await render(
+      <ErrorBoundary>
+        <Crash />
+      </ErrorBoundary>,
+    );
+    await fireEvent.press(screen.getByRole('button', { name: ar.backHome }));
+    expect(log.error).toHaveBeenCalledWith('Restart after a crash failed', failure);
   });
 
   it('goes to the root URL on web, because a reload would stay on the crashed route', async () => {
