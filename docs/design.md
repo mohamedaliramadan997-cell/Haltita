@@ -123,7 +123,7 @@
 
 ### 5.1 Mascots and token (`components/art`)
 
-- **Masky characters:** round, soft "bean" characters in cream with plum outlines, each wearing a **theatre mask**. Faces are drawn in SVG, and there are 8 seat tints for the mask colour.
+- **Masky characters:** round, soft "bean" characters in cream with plum outlines, each wearing a **theatre mask**. Faces are drawn in SVG, and there are 8 seat tints for the mask colour, all from the palette: `pink`, `mint`, `gold`, `teal`, `mutedOnDark`, `pinkDeep`, `mutedOnLight`, `white`.
 
 | Pose | Used for |
 |---|---|

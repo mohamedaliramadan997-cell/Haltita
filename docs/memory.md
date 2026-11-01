@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 1 foundation: T-010, T-011, T-012, T-013, T-014 and T-017 done. Phase 0 done except T-001 (store accounts pending) |
-| Stopped at | 2026-11-01: T-014 finished on `t/T-014-base-ui`, not yet committed or merged |
-| Next step | Commit T-014, open its PR and merge after CI passes, then start **T-015** from `main` |
-| Next task | **T-015** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 1 foundation: T-010 to T-015 and T-017 done. Phase 0 done except T-001 (store accounts pending) |
+| Stopped at | 2026-11-01: T-015 merged (PR for `t/T-015-art`); T-014 merged in PR #16 |
+| Next step | Start **T-016** from `main` |
+| Next task | **T-016** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -87,6 +87,20 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-11-01: T-015 Art
+
+- **Done:** `src/components/art/`, all SVG and no PNGs bundled: `MaskToken` (also exports `MaskShape`, reused by the others), `Masky` (6 poses; `seat` picks the tint and wraps), `Pattern` (star lattice at 8%, tiny mask outlines at 5%; now the background of every `Screen`) and `Emblem` (one line icon per `CardType`, for the card backs in T-061).
+- **Seat tints (`seatTints` in `colors.ts`, listed in `design.md` §5.1):** `design.md` asked for 8 without naming them, so they come from the palette with no new hex values: pink, mint, gold, teal, mutedOnDark, pinkDeep, mutedOnLight, white. `plum700` was tried and dropped because it vanishes on the plum background. **`white` is outside its "text on teal only" role in `design.md` §2.1 (owner to review).**
+- **Where the art differs from `masky-poses.png`, following `design.md` §11 (the file wins):**
+  - Only `honest` has a halo; the image gives every pose one.
+  - `detective` and `wait` have a small tinted mask on the head (the image has none), because `design.md` says every character wears one and the tint must show.
+  - `sly`'s eye-mask stays black as specified, so its seat tint is on the mask's outline.
+  - The sparkles and heart in the image aren't drawn.
+- **Emblems (owner to review):** `design.md` names them without describing them. Chosen: question mark, halo and sparkle (truth), eye-mask (liar), lightning bolt (challenge), envelope (mission).
+- **Tests:** `src/components/art/art.test.tsx`. They check the tint logic and that everything renders, not how it looks.
+- **Checks:** typecheck, ESLint and tests (73) pass; test:rules passes (no tests yet); Prettier passes with line endings ignored (known CRLF issue, so `npm run lint` still fails at `prettier --check` on this checkout); `expo-doctor` 20/20; `expo export --platform all --clear` bundles. A temporary route (not committed) in headless Chrome showed all poses, tints, token sizes and emblems, on plum and on cream.
+- **Not verified:** any of this on a phone. The SVG `Pattern` element is the one to watch on Android, since it now sits behind every screen; if it's missing or slow there, draw the lattice as plain paths instead.
 
 ### 2026-11-01: T-014 Base UI
 
