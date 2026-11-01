@@ -32,6 +32,18 @@ export const cardColors = {
 
 export type CardType = keyof typeof cardColors;
 
+/** Masky mask colour per seat (design.md §5.1). */
+export const seatTints = [
+  palette.pink,
+  palette.mint,
+  palette.gold,
+  palette.teal,
+  palette.mutedOnDark,
+  palette.pinkDeep,
+  palette.mutedOnLight,
+  palette.white,
+] as const;
+
 /** Semantic roles (design.md §2.2). Prefer these over raw palette names in components. */
 export const colors = {
   background: palette.plum900,
