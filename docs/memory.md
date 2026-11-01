@@ -9,10 +9,10 @@
 
 | Item | Value |
 |---|---|
-| Phase | Phase 1 foundation: T-010, T-011, T-012, T-013 and T-017 done. Phase 0 done except T-001 (store accounts pending) |
-| Stopped at | 2026-10-31: T-013 merged (PR for `t/T-013-content-loader`) |
-| Next step | Start **T-014** from `main` |
-| Next task | **T-014** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
+| Phase | Phase 1 foundation: T-010, T-011, T-012, T-013, T-014 and T-017 done. Phase 0 done except T-001 (store accounts pending) |
+| Stopped at | 2026-11-01: T-014 finished on `t/T-014-base-ui`, not yet committed or merged |
+| Next step | Commit T-014, open its PR and merge after CI passes, then start **T-015** from `main` |
+| Next task | **T-015** (T-001 stays `[~]` until the Apple and Google accounts are approved) |
 | Content version | v3.1: 100 questions, 50 challenges, 50 missions, 15 punishments |
 | Blockers | Apple Developer and Google Play Console approval pending (T-001, not needed until release) |
 
@@ -87,6 +87,22 @@
 - Overlays must send the next intent when they finish.
 
 ## 6. Session log
+
+### 2026-11-01: T-014 Base UI
+
+- **Done:** `src/components/ui/`: `Screen` (safe area, padding, background; takes `style`), `Button` (primary/secondary/host/ghost; `disabledReason` shows as a caption above it; `minHeight` so scaled text isn't clipped), `Toast` (`showToast(message)` from anywhere, one `<Toast />` in `app/_layout.tsx`, 2.5 s, the latest replaces the current one), `Banner` (`offline`/`hostAway`, display only) and `ErrorBoundary` (wraps the Stack and Toast in `app/_layout.tsx`). `ContentErrorScreen` and the placeholder Home now use `Screen`.
+- **"رجوع للرئيسية" restarts the app:** `reloadAppAsync` on native, `location.assign('/')` on web. The boundary has unmounted the navigator, and a remounted one would restore the crashed route. A restart opens on Home and keeps AsyncStorage, so `lastRoom` survives for rejoin.
+- **New copy, not from `design.md` §8 (owner to review):** `crashMessage`: "حصلت مشكلة.. معلش" / "Something went wrong, sorry". `backHome` ("رجوع للرئيسية") comes from `rules.md` §6; its English "Back to home" is new.
+- **Left for later tasks:**
+  - **T-015:** add `Pattern` to `Screen`; the host button's crown is the 👑 emoji until an icon exists, if one is wanted.
+  - **T-016:** report crashes (`componentDidCatch`) and failed restarts to `log.error` (`shortcut:` comments in `ErrorBoundary.tsx`).
+  - **T-060/T-070:** the pink-outline destructive button (`design.md` §2.2) isn't a variant yet; T-014 only named four.
+  - **T-083:** nothing renders `Banner` yet. Decide when it shows and how host away pauses play. It sits over the top of the screen, so it can cover a title.
+  - **T-084/T-085:** the button's press scale snaps instead of animating over 90 ms, and there's no haptic (`shortcut:` comment in `Button.tsx`).
+- **Tests:** `src/components/ui/ui.test.tsx`.
+- **Checks:** typecheck, ESLint and tests (65) pass; test:rules passes (no tests yet); Prettier passes with line endings ignored (known CRLF issue, so `npm run lint` still fails at `prettier --check` on this checkout); `expo-doctor` 20/20; `expo export --platform all --clear` bundles.
+- **Visual check:** a temporary route (not committed) in headless Chrome, device language Arabic: the button variants, disabled caption, toast, both banners and the crash screen match the spec, with 16 px margins on both sides.
+- **Not verified:** any of this on a phone (safe-area insets, native banner and toast stacking over the Stack), the native restart from the crash screen, and the browser actually navigating from the crash screen (both only covered by mocked tests). English layout (LTR) wasn't checked with English labels, because the preview's labels were hard-coded Arabic.
 
 ### 2026-10-31: T-013 Content loader and validation
 

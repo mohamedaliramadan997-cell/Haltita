@@ -8,6 +8,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 
 import { ContentErrorScreen } from '@/components/ui/ContentErrorScreen';
+import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
+import { Toast } from '@/components/ui/Toast';
 import { contentProblems } from '@/content';
 import { initLanguage } from '@/i18n';
 import { fonts } from '@/theme';
@@ -39,5 +41,10 @@ export default function RootLayout() {
   // shortcut: the problems aren't reported yet, send them to log.error at T-016.
   if (contentProblems.length > 0) return <ContentErrorScreen />;
 
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <ErrorBoundary>
+      <Stack screenOptions={{ headerShown: false }} />
+      <Toast />
+    </ErrorBoundary>
+  );
 }
